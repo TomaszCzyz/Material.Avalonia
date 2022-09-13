@@ -1,5 +1,8 @@
 ﻿using System.ComponentModel;
-using System.Runtime.CompilerServices; 
+using System.Runtime.CompilerServices;
+
+namespace Material.Demo.ViewModels;
+
 public class ViewModelBase : INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler PropertyChanged;

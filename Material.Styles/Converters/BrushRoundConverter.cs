@@ -3,25 +3,29 @@ using System.Globalization;
 using Avalonia.Data.Converters;
 using Avalonia.Media;
 
-namespace Material.Styles.Converters {
-    public class BrushRoundConverter : IValueConverter {
-        public static readonly IValueConverter Instance = new BrushRoundConverter();
-        public Brush HighValue { get; set; } = new SolidColorBrush(Brushes.White.Color);
+namespace Material.Styles.Converters;
 
-        public Brush LowValue { get; set; } = new SolidColorBrush(Brushes.Black.Color);
+public class BrushRoundConverter : IValueConverter
+{
+    public static readonly IValueConverter Instance = new BrushRoundConverter();
 
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture) {
-            if (!(value is SolidColorBrush solidColorBrush)) return null;
+    public Brush HighValue { get; set; } = new SolidColorBrush(Brushes.White.Color);
 
-            var color = solidColorBrush.Color;
+    public Brush LowValue { get; set; } = new SolidColorBrush(Brushes.Black.Color);
 
-            var brightness = 0.3 * color.R + 0.59 * color.G + 0.11 * color.B;
+    public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+        if (value is not SolidColorBrush solidColorBrush) return null;
 
-            return brightness < 123 ? LowValue : HighValue;
-        }
+        var color = solidColorBrush.Color;
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) {
-            throw new NotImplementedException();
-        }
+        var brightness = 0.3 * color.R + 0.59 * color.G + 0.11 * color.B;
+
+        return brightness < 123 ? LowValue : HighValue;
+    }
+
+    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+        throw new NotImplementedException();
     }
 }

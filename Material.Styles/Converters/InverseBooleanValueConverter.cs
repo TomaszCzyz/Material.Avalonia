@@ -2,7 +2,7 @@ using System;
 using System.Globalization;
 using Avalonia.Data.Converters;
 
-namespace Material.Styles {
+namespace Material.Styles.Converters {
     internal class InverseBooleanValueConverter : IValueConverter {
         public bool Default { get; set; }
 

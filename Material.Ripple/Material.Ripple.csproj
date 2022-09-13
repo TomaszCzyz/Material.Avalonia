@@ -1,8 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <TargetFrameworks>net6.0;netstandard2.0</TargetFrameworks>
+    <LangVersion>10</LangVersion>
+    <Nullable>enable</Nullable>
     <Authors>Larymar,SKProCH,Appleneko2001</Authors>
     <Company>Larymar,SKProCH,Appleneko2001</Company>
     <Description>Ripple component library of Material.Avalonia.</Description>
@@ -17,13 +18,12 @@
     </AvaloniaResource>
   </ItemGroup>
 
-
   <ItemGroup>
     <AvaloniaResource Remove="Ripple\RippleEffect\RippleEffect.xaml" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.10.16" />
+    <PackageReference Include="Avalonia" Version="11.0.0-preview1" />
   </ItemGroup>
 
 </Project>

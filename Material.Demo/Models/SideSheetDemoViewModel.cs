@@ -1,4 +1,6 @@
-﻿namespace Material.Demo.Models
+﻿using Material.Demo.ViewModels;
+
+namespace Material.Demo.Models
 {
     // Data context for sidesheet
     public class SideSheetData : ViewModelBase

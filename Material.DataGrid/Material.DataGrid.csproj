@@ -1,38 +1,39 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <LangVersion>8</LangVersion>
-        <Authors>Larymar,SKProCH,Appleneko2001</Authors>
-        <Company>Larymar,SKProCH,Appleneko2001</Company>
-        <Description>DataGrid styles library of Material.Avalonia.</Description>
-        <PackageProjectUrl>https://github.com/AvaloniaUtils/material.avalonia</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/AvaloniaUtils/material.avalonia</RepositoryUrl>
-        <RepositoryType>git</RepositoryType> 
-    </PropertyGroup>
-    <ItemGroup>
-        <AvaloniaResource Include="**\*.xaml">
-            <SubType>Designer</SubType>
-        </AvaloniaResource>
-    </ItemGroup>
-    <ItemGroup>
-      <None Remove="DataGrid.xaml" />
-    </ItemGroup>
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;netstandard2.0</TargetFrameworks>
+    <LangVersion>10</LangVersion>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Larymar,SKProCH,Appleneko2001</Authors>
+    <Company>Larymar,SKProCH,Appleneko2001</Company>
+    <Description>DataGrid styles library of Material.Avalonia.</Description>
+    <PackageProjectUrl>https://github.com/AvaloniaUtils/material.avalonia</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/AvaloniaUtils/material.avalonia</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+  <ItemGroup>
+    <AvaloniaResource Include="**\*.xaml">
+      <SubType>Designer</SubType>
+    </AvaloniaResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="DataGrid.xaml" />
+  </ItemGroup>
 
-    <ItemGroup>
-      <PackageReference Include="Avalonia" Version="0.10.16" />
-	  <PackageReference Include="Avalonia.Controls.DataGrid" Version="0.10.16" />
-    </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.0.0-preview1" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.0.0-preview1" />
+  </ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\Material.Styles\Material.Styles.csproj" />
-    </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Material.Styles\Material.Styles.csproj" />
+  </ItemGroup>
 
-    <ItemGroup>
-      <AvaloniaResource Update="DataGrid.xaml">
-        <Generator>MSBuild:Compile</Generator>
-      </AvaloniaResource>
-    </ItemGroup>
+  <ItemGroup>
+    <AvaloniaResource Update="DataGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </AvaloniaResource>
+  </ItemGroup>
 
 </Project>

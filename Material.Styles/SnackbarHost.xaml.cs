@@ -15,7 +15,7 @@ namespace Material.Styles
 {
     public class SnackbarHost : ContentControl
     {
-        private static readonly Dictionary<string, SnackbarHost> _snackbarHostDictionary;
+        private static readonly Dictionary<string, SnackbarHost> SnackbarHostDictionary;
 
         private readonly ObservableCollection<SnackbarModel> _snackbars;
         public ObservableCollection<SnackbarModel> SnackbarModels => _snackbars;
@@ -32,10 +32,10 @@ namespace Material.Styles
                 {
                     SetValue(HostNameProperty, value);
 
-                    if (_snackbarHostDictionary.ContainsValue(this))
+                    if (SnackbarHostDictionary.ContainsValue(this))
                     {
                         KeyValuePair<string, SnackbarHost>? target = null;
-                        foreach (var host in _snackbarHostDictionary)
+                        foreach (var host in SnackbarHostDictionary)
                         {
                             if (ReferenceEquals(host.Value, this))
                             {
@@ -46,7 +46,7 @@ namespace Material.Styles
 
                         if (target.HasValue)
                         {
-                            _snackbarHostDictionary.Remove(target.Value.Key);
+                            SnackbarHostDictionary.Remove(target.Value.Key);
                         }
                     }
                 }
@@ -79,7 +79,7 @@ namespace Material.Styles
         static SnackbarHost()
         {
             //_snackbarHosts = new HashSet<SnackbarHost>();
-            _snackbarHostDictionary = new Dictionary<string, SnackbarHost>();
+            SnackbarHostDictionary = new Dictionary<string, SnackbarHost>();
         }
         
         public SnackbarHost()
@@ -90,11 +90,11 @@ namespace Material.Styles
 
         private static string GetFirstHostName()
         {
-            if (_snackbarHostDictionary is null)
+            if (SnackbarHostDictionary is null)
                 // THIS IS IMPOSSIBLE TO HAPPEN! But I kept this for any reasons.
                 throw new NullReferenceException("Snackbar hosts pool is not initialized!");
 
-            return _snackbarHostDictionary.First().Key;
+            return SnackbarHostDictionary.First().Key;
         }
 
         private static SnackbarHost GetHost(string name)
@@ -102,7 +102,7 @@ namespace Material.Styles
             if (name is null)
                 throw new ArgumentNullException(nameof(name));
 
-            var result = _snackbarHostDictionary[name];
+            var result = SnackbarHostDictionary[name];
             return result;
         }
 
@@ -112,9 +112,8 @@ namespace Material.Styles
         /// <param name="text">message text.</param>
         /// <param name="targetHost">the snackbar host that you wanted to use.</param>
         /// <param name="priority">the priority of current task.</param>
-        public static void Post(string text, string? targetHost = null,
-            DispatcherPriority priority = DispatcherPriority.Normal) =>
-            Post(new SnackbarModel(text), targetHost, priority);
+        public static void Post(string text, string? targetHost = null, DispatcherPriority priority = default)
+            => Post(new SnackbarModel(text), targetHost, priority);
 
         /// <summary>
         /// Post an snackbar with custom content and button (only one).
@@ -123,12 +122,12 @@ namespace Material.Styles
         /// <param name="targetHost">the snackbar host that you wanted to use.</param>
         /// <param name="priority">the priority of current task.</param>
         public static void Post(SnackbarModel model, string? targetHost = null,
-            DispatcherPriority priority = DispatcherPriority.Normal)
+            DispatcherPriority priority = default)
         {
             if (string.IsNullOrEmpty(targetHost))
                 targetHost = GetFirstHostName();
 
-            var host = GetHost(targetHost!);
+            var host = GetHost(targetHost);
 
             if (host is null)
                 throw new ArgumentNullException(nameof(targetHost),
@@ -164,7 +163,7 @@ namespace Material.Styles
         /// <param name="model">snackbar data model.</param>
         /// <param name="targetHost">the snackbar host that you wanted to use.</param>
         /// <param name="priority">the priority of current task.</param>
-        public static void Remove(SnackbarModel model, string targetHost = null, DispatcherPriority priority = DispatcherPriority.Normal)
+        public static void Remove(SnackbarModel model, string targetHost = null, DispatcherPriority priority = default)
         {
             if (string.IsNullOrEmpty(targetHost))
                 targetHost = GetFirstHostName();
@@ -190,14 +189,14 @@ namespace Material.Styles
 
         protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
         {
-            _snackbarHostDictionary.Add(HostName, this);
+            SnackbarHostDictionary.Add(HostName, this);
             
             base.OnAttachedToVisualTree(e);
         }
 
         protected override void OnDetachedFromLogicalTree(LogicalTreeAttachmentEventArgs e)
         {
-            _snackbarHostDictionary.Remove(HostName);
+            SnackbarHostDictionary.Remove(HostName);
             
             base.OnDetachedFromLogicalTree(e);
         }

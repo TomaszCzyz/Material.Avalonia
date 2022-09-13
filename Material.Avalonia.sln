@@ -17,6 +17,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Material.DataGrid", "Materi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Material.Dialog", "Material.Dialog\Material.Dialog.csproj", "{4F5F7FFD-B6E2-4C36-B250-D6B8169A0B1A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{71F81D5C-91B7-4FFB-9D40-E64EE9D25F5B}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		Banner.svg = Banner.svg
+		Config.Numerge.json = Config.Numerge.json
+		Directory.Build.props = Directory.Build.props
+		FavIcon.svg = FavIcon.svg
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

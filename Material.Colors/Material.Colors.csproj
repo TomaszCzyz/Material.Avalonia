@@ -1,7 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>net6.0;netstandard2.0</TargetFrameworks>
+    <LangVersion>10</LangVersion>
+
+    <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Larymar,SKProCH,Appleneko2001</Authors>
     <RepositoryUrl>https://github.com/AvaloniaUtils/material.avalonia</RepositoryUrl>
@@ -17,6 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.10.16" />
+    <PackageReference Include="Avalonia" Version="11.0.0-preview1" />
   </ItemGroup>
 </Project>
