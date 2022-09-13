@@ -18,11 +18,11 @@ namespace Material.Dialog.Views
             Result = new DateTimePickerDialogResult();
 
             InitializeComponent();
-            
+
 #if DEBUG
-            
+
             this.AttachDevTools();
-        
+
 #endif
         }
 

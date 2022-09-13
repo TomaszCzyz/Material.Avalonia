@@ -5,7 +5,7 @@
        Selector="NativeMenuBar">
     <Style.Resources>
         <converters:InverseBooleanValueConverter x:Key="AvaloniaThemesDefaultNativeMenuBarInverseBooleanValueConverter"
-                                             Default="True" />
+                                                 Default="True" />
     </Style.Resources>
     <Setter Property="Template">
         <ControlTemplate>

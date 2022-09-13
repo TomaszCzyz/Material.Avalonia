@@ -27,10 +27,10 @@ namespace Material.Styles.Controls
 
         static ContentExpandControl()
         {
-            AffectsArrange<ContentExpandControl>(MultiplierProperty, 
+            AffectsArrange<ContentExpandControl>(MultiplierProperty,
                 OrientationProperty);
-            
-            AffectsMeasure<ContentExpandControl>(MultiplierProperty, 
+
+            AffectsMeasure<ContentExpandControl>(MultiplierProperty,
                 OrientationProperty);
         }
 
@@ -54,7 +54,7 @@ namespace Material.Styles.Controls
         protected override Size MeasureOverride(Size availableSize)
         {
             var result = base.MeasureOverride(availableSize);
-            
+
             var w = result.Width;
             var h = result.Height;
 
@@ -63,14 +63,14 @@ namespace Material.Styles.Controls
                 case Orientation.Horizontal:
                     w *= Multiplier;
                     break;
-                
+
                 case Orientation.Vertical:
                     h *= Multiplier;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-            
+
             return new Size(w, h);
         }
     }

@@ -12,7 +12,7 @@ namespace Material.Styles.Converters
         public object Convert(IList<object?> values, Type targetType, object? parameter, CultureInfo culture)
         {
             double min = 0, max = 100, val = 0;
-            
+
             if (values[0] is double value)
                 val = value;
 

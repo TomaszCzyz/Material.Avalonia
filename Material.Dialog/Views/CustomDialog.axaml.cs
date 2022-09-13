@@ -10,12 +10,12 @@ namespace Material.Dialog.Views
     {
         public CustomDialog()
         {
-            InitializeComponent(); 
-            
+            InitializeComponent();
+
 #if DEBUG
-            
+
             this.AttachDevTools();
-        
+
 #endif
         }
 

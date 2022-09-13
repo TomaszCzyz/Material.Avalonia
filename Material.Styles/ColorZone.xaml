@@ -29,95 +29,95 @@
                                               TextBlock.Foreground="{TemplateBinding Foreground}"
                                               ContentControl.Foreground="{TemplateBinding Foreground}"
                                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                         </Border>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <Style Selector="cc|ColorZone Button,
                      cc|ColorZone ToggleButton">
         <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
-        <Setter Property="assists:ToggleButtonAssist.UncheckedForeground" Value="{DynamicResource MaterialDesignBody}"/>
+        <Setter Property="assists:ToggleButtonAssist.UncheckedForeground" Value="{DynamicResource MaterialDesignBody}" />
     </Style>
 
     <Style Selector="cc|ColorZone[Mode=Inverted]">
         <Setter Property="Background" Value="{DynamicResource MaterialDesignBody}" />
         <Setter Property="Foreground" Value="{DynamicResource MaterialDesignPaper}" />
     </Style>
-    
+
     <Style Selector="cc|ColorZone[Mode=Inverted] Button,
                      cc|ColorZone[Mode=Inverted] ToggleButton">
         <Setter Property="Foreground" Value="{DynamicResource MaterialDesignPaper}" />
-        <Setter Property="assists:ToggleButtonAssist.UncheckedForeground" Value="{DynamicResource MaterialDesignPaper}"/>
+        <Setter Property="assists:ToggleButtonAssist.UncheckedForeground" Value="{DynamicResource MaterialDesignPaper}" />
     </Style>
-    
+
     <Style Selector="cc|ColorZone[Mode=PrimaryLight]">
         <Setter Property="Background" Value="{DynamicResource PrimaryHueLightBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource PrimaryHueLightForegroundBrush}" />
     </Style>
-    
+
     <Style Selector="cc|ColorZone[Mode=PrimaryLight] Button,
                      cc|ColorZone[Mode=PrimaryLight] ToggleButton">
         <Setter Property="Foreground" Value="{DynamicResource PrimaryHueLightForegroundBrush}" />
-        <Setter Property="assists:ToggleButtonAssist.UncheckedForeground" Value="{DynamicResource PrimaryHueLightForegroundBrush}"/>
+        <Setter Property="assists:ToggleButtonAssist.UncheckedForeground" Value="{DynamicResource PrimaryHueLightForegroundBrush}" />
     </Style>
-    
+
     <Style Selector="cc|ColorZone[Mode=PrimaryMid]">
         <Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
     </Style>
-    
+
     <Style Selector="cc|ColorZone[Mode=PrimaryMid] Button,
                      cc|ColorZone[Mode=PrimaryMid] ToggleButton">
         <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
-        <Setter Property="assists:ToggleButtonAssist.UncheckedForeground" Value="{DynamicResource PrimaryHueMidForegroundBrush}"/>
+        <Setter Property="assists:ToggleButtonAssist.UncheckedForeground" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
     </Style>
-    
+
     <Style Selector="cc|ColorZone[Mode=PrimaryDark]">
         <Setter Property="Background" Value="{DynamicResource PrimaryHueDarkBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource PrimaryHueDarkForegroundBrush}" />
     </Style>
-    
+
     <Style Selector="cc|ColorZone[Mode=PrimaryDark] Button,
                      cc|ColorZone[Mode=PrimaryDark] ToggleButton">
         <Setter Property="Foreground" Value="{DynamicResource PrimaryHueDarkForegroundBrush}" />
-        <Setter Property="assists:ToggleButtonAssist.UncheckedForeground" Value="{DynamicResource PrimaryHueDarkForegroundBrush}"/>
+        <Setter Property="assists:ToggleButtonAssist.UncheckedForeground" Value="{DynamicResource PrimaryHueDarkForegroundBrush}" />
     </Style>
-    
+
     <Style Selector="cc|ColorZone[Mode=Accent]">
         <Setter Property="Background" Value="{DynamicResource SecondaryHueMidBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource SecondaryHueMidForegroundBrush}" />
     </Style>
-    
+
     <Style Selector="cc|ColorZone[Mode=Accent] Button,
                      cc|ColorZone[Mode=Accent] ToggleButton">
         <Setter Property="Foreground" Value="{DynamicResource SecondaryHueMidForegroundBrush}" />
-        <Setter Property="assists:ToggleButtonAssist.UncheckedForeground" Value="{DynamicResource SecondaryHueMidForegroundBrush}"/>
+        <Setter Property="assists:ToggleButtonAssist.UncheckedForeground" Value="{DynamicResource SecondaryHueMidForegroundBrush}" />
     </Style>
-    
+
     <Style Selector="cc|ColorZone[Mode=Light]">
         <Setter Property="Background" Value="{DynamicResource MaterialDesignLightBackground}" />
         <Setter Property="Foreground" Value="{DynamicResource MaterialDesignLightForeground}" />
     </Style>
-    
+
     <Style Selector="cc|ColorZone[Mode=Light] Button,
                      cc|ColorZone[Mode=Light] ToggleButton">
         <Setter Property="Foreground" Value="{DynamicResource MaterialDesignLightForeground}" />
-        <Setter Property="assists:ToggleButtonAssist.UncheckedForeground" Value="{DynamicResource MaterialDesignLightForeground}"/>
+        <Setter Property="assists:ToggleButtonAssist.UncheckedForeground" Value="{DynamicResource MaterialDesignLightForeground}" />
     </Style>
-    
+
     <Style Selector="cc|ColorZone[Mode=Dark]">
         <Setter Property="Background" Value="{DynamicResource MaterialDesignDarkBackground}" />
         <Setter Property="Foreground" Value="{DynamicResource MaterialDesignDarkForeground}" />
     </Style>
-    
+
     <Style Selector="cc|ColorZone[Mode=Dark] Button,
                      cc|ColorZone[Mode=Dark] ToggleButton">
         <Setter Property="Foreground" Value="{DynamicResource MaterialDesignDarkForeground}" />
-        <Setter Property="assists:ToggleButtonAssist.UncheckedForeground" Value="{DynamicResource MaterialDesignDarkForeground}"/>
+        <Setter Property="assists:ToggleButtonAssist.UncheckedForeground" Value="{DynamicResource MaterialDesignDarkForeground}" />
     </Style>
 
     <Design.PreviewWith>

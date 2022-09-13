@@ -10,8 +10,9 @@ namespace Material.Styles.Controls
     public class MaterialInternalIcon : TemplatedControl
     {
         private static readonly Lazy<IDictionary<string, string>> _dataSetInstance = new(IconsDataSet.CreateDataSet);
-        
-        static MaterialInternalIcon() {
+
+        static MaterialInternalIcon()
+        {
             KindProperty.Changed.Subscribe(args => (args.Sender as MaterialInternalIcon)?.UpdateData());
         }
 
@@ -20,8 +21,9 @@ namespace Material.Styles.Controls
         /// <summary>
         /// Gets or sets the icon to display.
         /// </summary>
-        public string Kind {
-            get => (string) GetValue(KindProperty);
+        public string Kind
+        {
+            get => (string)GetValue(KindProperty);
             set => SetValue(KindProperty, value);
         }
 
@@ -33,7 +35,8 @@ namespace Material.Styles.Controls
         /// <summary>
         /// Gets the icon path data for the current <see cref="Kind"/>.
         /// </summary>
-        public Geometry? Data {
+        public Geometry? Data
+        {
             get
             {
                 _data = _data switch
@@ -46,7 +49,8 @@ namespace Material.Styles.Controls
             private set => SetAndRaise(DataProperty, ref _data, value);
         }
 
-        protected override void OnApplyTemplate(TemplateAppliedEventArgs e) {
+        protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
+        {
             base.OnApplyTemplate(e);
             UpdateData();
         }
@@ -57,7 +61,7 @@ namespace Material.Styles.Controls
                 return;
 
             string data = null;
-            
+
             if (_dataSetInstance.Value?.TryGetValue(Kind, out data) ?? false)
                 Data = Geometry.Parse(data);
             else

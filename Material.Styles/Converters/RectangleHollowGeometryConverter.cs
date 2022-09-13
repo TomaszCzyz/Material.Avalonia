@@ -36,7 +36,7 @@ namespace Material.Styles.Converters
             Rect hollow = Rect.Empty;
 
             StreamGeometry result = null;
-            
+
             try
             {
                 Point s = new Point(1, 1);
@@ -45,10 +45,12 @@ namespace Material.Styles.Converters
                 {
                     main = mainR;
                 }
+
                 if ((values[1] is Rect hollowR))
                 {
                     hollow = hollowR;
                 }
+
                 if ((values[2] is TransformedBounds tb))
                 {
                     s = new Point(tb.Transform.M11, tb.Transform.M22);
@@ -76,18 +78,18 @@ namespace Material.Styles.Converters
                           $"L {Math.Max(h0.X * s.X, lL)} {h1.Y * s.Y} z ";
 
                 str = str.Replace(",", ".");
-                
+
                 result = StreamGeometry.Parse(str);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 var m0 = main.TopLeft;
                 var m1 = main.BottomRight;
-                
+
                 result = StreamGeometry.Parse($"M {m0.X} {m0.Y} " +
-                                               $"L {m1.X} {m0.Y} " +
-                                               $"L {m1.X} {m1.Y} " +
-                                               $"L {m0.X} {m1.Y} z ");
+                                              $"L {m1.X} {m0.Y} " +
+                                              $"L {m1.X} {m1.Y} " +
+                                              $"L {m0.X} {m1.Y} z ");
             }
 
             return result;

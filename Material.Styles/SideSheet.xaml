@@ -16,13 +16,13 @@
     <!-- SideSheet (desktop variant) -->
     <Style Selector="cc|SideSheet">
         <Setter Property="SideSheetWidth" Value="320" />
-        <Setter Property="SideSheetPadding" Value="16"/>
-        <Setter Property="Padding" Value="0"/>
+        <Setter Property="SideSheetPadding" Value="16" />
+        <Setter Property="Padding" Value="0" />
         <Setter Property="SideSheetDirection" Value="Right" />
         <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}" />
         <Setter Property="SideSheetHeaderTemplate">
             <DataTemplate>
-                <TextBlock Classes="Headline6" Text="{Binding}"/>
+                <TextBlock Classes="Headline6" Text="{Binding}" />
             </DataTemplate>
         </Setter>
         <Setter Property="Template">
@@ -40,11 +40,11 @@
                                 <DockPanel Name="PART_HeaderPanel">
                                     <Button Name="PART_CloseButton" DockPanel.Dock="Right" Classes="Icon"
                                             IsVisible="{TemplateBinding SideSheetCanClose}">
-                                        <controls:MaterialInternalIcon Name="PART_Icon" Kind="Close"/>
+                                        <controls:MaterialInternalIcon Name="PART_Icon" Kind="Close" />
                                     </Button>
                                     <ContentPresenter Name="PART_HeaderContentPresenter" DockPanel.Dock="Left"
                                                       Content="{TemplateBinding SideSheetHeader, Mode=OneWay}"
-                                                      ContentTemplate="{TemplateBinding SideSheetHeaderTemplate}"/>
+                                                      ContentTemplate="{TemplateBinding SideSheetHeaderTemplate}" />
                                 </DockPanel>
                                 <ContentPresenter Name="PART_SideContentPresenter"
                                                   Content="{TemplateBinding SideSheetContent}"
@@ -134,20 +134,21 @@
     <Style Selector="cc|SideSheet:open /template/ Border#PART_Scrim">
         <Setter Property="Opacity" Value="0.32" />
     </Style>
-    
-    <Style Selector="cc|SideSheet /template/ StackPanel#PART_SideSheetPanel > DockPanel#PART_HeaderPanel > Button#PART_CloseButton.Icon" >
-        <Setter Property="Height" Value="36"/>
-        <Setter Property="Width" Value="36"/>
-        <Setter Property="Margin" Value="-6"/>
-        <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+
+    <Style Selector="cc|SideSheet /template/ StackPanel#PART_SideSheetPanel > DockPanel#PART_HeaderPanel > Button#PART_CloseButton.Icon">
+        <Setter Property="Height" Value="36" />
+        <Setter Property="Width" Value="36" />
+        <Setter Property="Margin" Value="-6" />
+        <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
     </Style>
-    
-    <Style Selector="cc|SideSheet /template/ StackPanel#PART_SideSheetPanel > DockPanel#PART_HeaderPanel > Button#PART_CloseButton > controls|MaterialInternalIcon#PART_Icon">
-        <Setter Property="Height" Value="24"/>
-        <Setter Property="Width" Value="24"/>
+
+    <Style
+        Selector="cc|SideSheet /template/ StackPanel#PART_SideSheetPanel > DockPanel#PART_HeaderPanel > Button#PART_CloseButton > controls|MaterialInternalIcon#PART_Icon">
+        <Setter Property="Height" Value="24" />
+        <Setter Property="Width" Value="24" />
     </Style>
     <Style Selector="cc|SideSheet /template/ StackPanel#PART_SideSheetPanel > ContentPresenter#PART_SideContentPresenter">
-        <Setter Property="Margin" Value="0,5,0,0"/>
+        <Setter Property="Margin" Value="0,5,0,0" />
     </Style>
 
     <Design.PreviewWith>

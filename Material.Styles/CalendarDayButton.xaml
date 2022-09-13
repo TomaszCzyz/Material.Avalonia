@@ -25,9 +25,9 @@
         <Setter Property="Template">
             <ControlTemplate>
                 <Panel>
-                    <Border Name="PART_InnerBorder" CornerRadius="64" 
-                            Background="{TemplateBinding BorderBrush}"/>
-                    
+                    <Border Name="PART_InnerBorder" CornerRadius="64"
+                            Background="{TemplateBinding BorderBrush}" />
+
                     <Border Name="Root" Background="{TemplateBinding Background}"
                             BorderThickness="0" ClipToBounds="True">
                         <ContentControl Name="Content"
@@ -35,32 +35,32 @@
                                         ContentTemplate="{TemplateBinding ContentTemplate}"
                                         FontSize="{TemplateBinding FontSize}"
                                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                     </Border>
 
-                    <Border Name="PART_Border" CornerRadius="64" 
+                    <Border Name="PART_Border" CornerRadius="64"
                             BorderBrush="{TemplateBinding BorderBrush}" />
-                    
+
                 </Panel>
             </ControlTemplate>
         </Setter>
     </Style>
-    
+
     <Style Selector="CalendarDayButton TextBlock">
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="HorizontalAlignment" Value="Center"/>
-        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="TextAlignment" Value="Center" />
     </Style>
 
     <Style Selector="CalendarDayButton /template/ Border#PART_Border">
         <Setter Property="Opacity" Value="0" />
         <Setter Property="BorderThickness" Value="0" />
     </Style>
-    
+
     <Style Selector="CalendarDayButton /template/ Border#PART_InnerBorder">
         <Setter Property="Opacity" Value="0" />
     </Style>
-    
+
     <Style Selector="CalendarDayButton:pointerover /template/ Border#PART_InnerBorder">
         <Setter Property="Opacity" Value="0.32" />
     </Style>
@@ -72,20 +72,20 @@
     </Style>
 
     <Style Selector="CalendarDayButton:today">
-        <Setter Property="TextBlock.Foreground" Value="{DynamicResource PrimaryHueMidBrush}"/>
+        <Setter Property="TextBlock.Foreground" Value="{DynamicResource PrimaryHueMidBrush}" />
     </Style>
     <Style Selector="CalendarDayButton:today:selected">
-        <Setter Property="TextBlock.Foreground" Value="{DynamicResource MaterialDesignBackground}"/>
+        <Setter Property="TextBlock.Foreground" Value="{DynamicResource MaterialDesignBackground}" />
     </Style>
 
     <Style Selector="CalendarDayButton:inactive /template/ Border#Root">
         <Setter Property="Opacity" Value="0.24" />
     </Style>
-    
+
     <Style Selector="CalendarDayButton:disabled /template/ ContentControl#Content">
         <Setter Property="Opacity" Value="0.32" />
     </Style>
-    
+
     <Style Selector="CalendarDayButton:blackout">
         <Setter Property="IsVisible" Value="False" />
     </Style>

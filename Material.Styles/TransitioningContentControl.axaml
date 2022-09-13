@@ -1,5 +1,5 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style Selector="TransitioningContentControl">
         <!-- Set Defaults -->
         <Setter Property="Template">
@@ -13,7 +13,7 @@
                                   Content="{TemplateBinding CurrentContent}"
                                   Padding="{TemplateBinding Padding}"
                                   VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
             </ControlTemplate>
         </Setter>
     </Style>

@@ -38,6 +38,6 @@ public static class TransitionAssist
     /// </summary>
     public static bool GetDisableTransitions(AvaloniaObject element)
     {
-        return (bool) element.GetValue(DisableTransitionsProperty)!;
+        return (bool)element.GetValue(DisableTransitionsProperty)!;
     }
 }

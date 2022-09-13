@@ -1,6 +1,6 @@
 ﻿using Avalonia.Controls;
 using Material.Dialog.Interfaces;
-using System; 
+using System;
 using System.Threading.Tasks;
 using Material.Styles.Assists;
 
@@ -9,6 +9,7 @@ namespace Material.Dialog.Bases
     internal class DialogWindowBase<TWindow, TResult> : IDialogWindow<TResult> where TWindow : Window, IDialogWindowResult<TResult>
     {
         private readonly TWindow _window;
+
         public DialogWindowBase(TWindow window)
         {
             _window = window;
@@ -25,7 +26,7 @@ namespace Material.Dialog.Bases
         /// </summary>
         /// <returns>The window.</returns>
         public Window GetWindow() => _window;
-        
+
         /// <summary>
         /// Shows the window.
         /// </summary>
@@ -53,7 +54,7 @@ namespace Material.Dialog.Bases
         {
             var tcs = new TaskCompletionSource<TResult>();
 
-            void OnceHandler (object sender, EventArgs args)
+            void OnceHandler(object sender, EventArgs args)
             {
                 tcs.TrySetResult(_window.GetResult());
                 _window.Closed -= OnceHandler;

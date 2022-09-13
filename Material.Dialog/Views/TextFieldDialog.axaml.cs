@@ -18,11 +18,11 @@ namespace Material.Dialog.Views
             Result = new TextFieldDialogResult();
 
             InitializeComponent();
-            
+
 #if DEBUG
-            
+
             this.AttachDevTools();
-        
+
 #endif
 
             Closed += TextFieldDialog_Closed;
@@ -39,7 +39,7 @@ namespace Material.Dialog.Views
         {
             if (!(DataContext is TextFieldDialogViewModel vm))
                 return;
-            
+
             //vm.ButtonClick.RaiseCanExecute();
 
             var fields = this.Find<ItemsControl>("PART_Fields");
@@ -48,7 +48,7 @@ namespace Material.Dialog.Views
             {
                 if (fields is null)
                     return;
-                        
+
                 int index = 0;
                 foreach (var item in fields.ItemContainerGenerator.Containers)
                 {
@@ -79,7 +79,7 @@ namespace Material.Dialog.Views
         {
             if (!(DataContext is TextFieldDialogViewModel viewModel))
                 return null;
-            
+
             return viewModel.DialogResult switch
             {
                 TextFieldDialogResult vm => vm,

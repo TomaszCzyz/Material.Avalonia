@@ -93,7 +93,7 @@
     <Style Selector="TreeViewItem[ItemCount=0] /template/ ToggleButton#Expander">
         <Setter Property="Opacity" Value="0" />
     </Style>
-    
+
     <!-- Statements for transition elements -->
     <!-- Default statement - hover border and selected border should have invisible (full-transparent) -->
     <Style Selector="TreeViewItem /template/ Border#MouseOverBorder">
@@ -102,30 +102,31 @@
     <Style Selector="TreeViewItem /template/ Border#SelectedBorder">
         <Setter Property="Opacity" Value="0" />
     </Style>
-    
+
     <Style Selector="ToggleButton.MaterialDesignExpandCollapseToggleStyle /template/ Path#ExpandPath">
         <Setter Property="RenderTransform" Value="rotate(0deg)" />
     </Style>
-    
-    
+
+
     <!-- Set hover highlight to semi-transparent barely visible when cursor hovering TreeViewItem -->
     <Style Selector="TreeViewItem:pointerover /template/ Border#MouseOverBorder">
         <Setter Property="Opacity" Value="0.1" />
     </Style>
-    
+
     <!-- Set selected highlight to semi-transparent visible when user selected TreeViewItem -->
     <Style Selector="TreeViewItem:selected /template/ Border#SelectedBorder">
         <Setter Property="Opacity" Value="0.3" />
     </Style>
-    
+
     <!-- Rotate the arrow to 45 degrees when TreeViewItem expanded -->
     <Style Selector="ToggleButton.MaterialDesignExpandCollapseToggleStyle:checked /template/ Path#ExpandPath">
         <Setter Property="RenderTransform" Value="rotate(45deg)" />
     </Style>
-    
-    
+
+
     <!-- Transitions -->
-    <Style Selector="TreeViewItem:not(.notransitions) /template/ Border#SelectedBorder,
+    <Style
+        Selector="TreeViewItem:not(.notransitions) /template/ Border#SelectedBorder,
                    TreeViewItem:not(.notransitions) /template/ Border#MouseOverBorder">
         <Setter Property="Transitions">
             <Transitions>
@@ -133,7 +134,7 @@
             </Transitions>
         </Setter>
     </Style>
-    
+
     <Style Selector="ToggleButton.MaterialDesignExpandCollapseToggleStyle:not(.notransitions) /template/ Path#ExpandPath">
         <Setter Property="Transitions">
             <Transitions>

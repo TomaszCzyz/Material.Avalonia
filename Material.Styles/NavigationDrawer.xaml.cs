@@ -10,10 +10,10 @@ namespace Material.Styles
 {
     [PseudoClasses(":open", ":closed", ":left", ":right")]
     public class NavigationDrawer : ContentControl
-    { 
+    {
         public static readonly StyledProperty<object> LeftDrawerContentProperty =
             AvaloniaProperty.Register<NavigationDrawer, object>(nameof(LeftDrawerContent));
-         
+
         public static readonly StyledProperty<IDataTemplate> LeftDrawerContentTemplateProperty =
             AvaloniaProperty.Register<NavigationDrawer, IDataTemplate>(nameof(LeftDrawerContentTemplate));
 
@@ -22,11 +22,11 @@ namespace Material.Styles
 
         public static readonly StyledProperty<double> LeftDrawerWidthProperty =
             AvaloniaProperty.Register<NavigationDrawer, double>(nameof(LeftDrawerWidth));
-        
-        
+
+
         public static readonly StyledProperty<object> RightDrawerContentProperty =
             AvaloniaProperty.Register<NavigationDrawer, object>(nameof(RightDrawerContent));
-         
+
         public static readonly StyledProperty<IDataTemplate> RightDrawerContentTemplateProperty =
             AvaloniaProperty.Register<NavigationDrawer, IDataTemplate>(nameof(RightDrawerContentTemplate));
 
@@ -66,7 +66,7 @@ namespace Material.Styles
             get => GetValue(LeftDrawerWidthProperty);
             set => SetValue(LeftDrawerWidthProperty, value);
         }
-        
+
         /// <summary>
         /// Gets or sets the content to display.
         /// </summary> 
@@ -116,7 +116,7 @@ namespace Material.Styles
             if (e.NameScope.Find("PART_Scrim") is Border border)
             {
                 PART_Scrim = border;
-                
+
                 PART_Scrim.PointerPressed += PART_Scrim_Pressed;
             }
 
@@ -125,17 +125,17 @@ namespace Material.Styles
 
         protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
         {
-            if(PART_Scrim != null)
+            if (PART_Scrim != null)
                 PART_Scrim.PointerPressed += PART_Scrim_Pressed;
-            
+
             base.OnAttachedToVisualTree(e);
         }
 
         protected override void OnDetachedFromVisualTree(VisualTreeAttachmentEventArgs e)
         {
-            if(PART_Scrim != null)
+            if (PART_Scrim != null)
                 PART_Scrim.PointerPressed -= PART_Scrim_Pressed;
-            
+
             base.OnDetachedFromVisualTree(e);
         }
 

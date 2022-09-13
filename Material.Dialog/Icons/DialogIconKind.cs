@@ -13,6 +13,6 @@ namespace Material.Dialog.Icons
         Help,
         Issues,
         Stop,
-        Blocked 
+        Blocked
     }
 }

@@ -39,7 +39,7 @@ namespace Material.Styles.Controls
                 Offset = new Vector(x, y);
                 e.Handled = true;
             }
-            
+
             /*if (Extent.Height > Viewport.Height || Extent.Width > Viewport.Width)
             {
                 var scrollable = Child as ILogicalScrollable;

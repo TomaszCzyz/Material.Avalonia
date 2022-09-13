@@ -11,7 +11,7 @@ namespace Material.Dialog
         /// </summary>
         public DateTime ImplicitValue = DateTime.Now;
     }
-    
+
     public class TimePickerDialogBuilderParams : TwoFeedbackDialogBuilderParamsBase
     {
         /// <summary>

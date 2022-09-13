@@ -29,10 +29,7 @@ namespace Material.Styles.Themes
         /// <param name="baseUri">The base URL for the XAML context.</param>
         public MaterialThemeBase(Uri baseUri)
         {
-            _controlsStyles = new StyleInclude(baseUri)
-            {
-                Source = new Uri("avares://Material.Avalonia/Material.Avalonia.Templates.xaml")
-            };
+            _controlsStyles = new StyleInclude(baseUri) { Source = new Uri("avares://Material.Avalonia/Material.Avalonia.Templates.xaml") };
         }
 
         /// <summary>
@@ -40,7 +37,7 @@ namespace Material.Styles.Themes
         /// </summary>
         /// <param name="serviceProvider">The XAML service provider.</param>
         public MaterialThemeBase(IServiceProvider serviceProvider)
-            : this(((IUriContext) serviceProvider.GetService(typeof(IUriContext))!).BaseUri)
+            : this(((IUriContext)serviceProvider.GetService(typeof(IUriContext))!).BaseUri)
         {
         }
 
@@ -90,7 +87,7 @@ namespace Material.Styles.Themes
                 {
                     _isLoading = true;
 
-                    _loaded = new Avalonia.Styling.Styles() {_controlsStyles};
+                    _loaded = new Avalonia.Styling.Styles() { _controlsStyles };
 
                     var initialTheme = ProvideInitialTheme();
                     if (initialTheme != null)
@@ -192,17 +189,14 @@ namespace Material.Styles.Themes
                     "PrimaryHueLightForegroundBrush",
                     theme => theme.PrimaryLight.ForegroundColor ?? theme.PrimaryLight.Color.ContrastingForegroundColor()
                 },
-                {
-                    "PrimaryHueMidForegroundBrush",
-                    theme => theme.PrimaryMid.ForegroundColor ?? theme.PrimaryMid.Color.ContrastingForegroundColor()
-                },
+                { "PrimaryHueMidForegroundBrush", theme => theme.PrimaryMid.ForegroundColor ?? theme.PrimaryMid.Color.ContrastingForegroundColor() },
                 {
                     "PrimaryHueDarkForegroundBrush",
                     theme => theme.PrimaryDark.ForegroundColor ?? theme.PrimaryDark.Color.ContrastingForegroundColor()
                 },
-                {"PrimaryHueLightBrush", theme => theme.PrimaryLight.Color},
-                {"PrimaryHueMidBrush", theme => theme.PrimaryMid.Color},
-                {"PrimaryHueDarkBrush", theme => theme.PrimaryDark.Color},
+                { "PrimaryHueLightBrush", theme => theme.PrimaryLight.Color },
+                { "PrimaryHueMidBrush", theme => theme.PrimaryMid.Color },
+                { "PrimaryHueDarkBrush", theme => theme.PrimaryDark.Color },
                 {
                     "SecondaryHueLightForegroundBrush",
                     theme => theme.SecondaryLight.ForegroundColor ?? theme.SecondaryLight.Color.ContrastingForegroundColor()
@@ -215,37 +209,37 @@ namespace Material.Styles.Themes
                     "SecondaryHueDarkForegroundBrush",
                     theme => theme.SecondaryDark.ForegroundColor ?? theme.SecondaryDark.Color.ContrastingForegroundColor()
                 },
-                {"SecondaryHueLightBrush", theme => theme.SecondaryLight.Color},
-                {"SecondaryHueMidBrush", theme => theme.SecondaryMid.Color},
-                {"SecondaryHueDarkBrush", theme => theme.SecondaryDark.Color},
-                {"ValidationErrorBrush", theme => theme.ValidationError},
-                {"MaterialDesignBackground", theme => theme.Background},
-                {"MaterialDesignPaper", theme => theme.Paper},
-                {"MaterialDesignCardBackground", theme => theme.CardBackground},
-                {"MaterialDesignToolBarBackground", theme => theme.ToolBarBackground},
-                {"MaterialDesignBody", theme => theme.Body},
-                {"MaterialDesignBodyLight", theme => theme.BodyLight},
-                {"MaterialDesignColumnHeader", theme => theme.ColumnHeader},
-                {"MaterialDesignCheckBoxOff", theme => theme.CheckBoxOff},
-                {"MaterialDesignCheckBoxDisabled", theme => theme.CheckBoxDisabled},
-                {"MaterialDesignTextBoxBorder", theme => theme.TextBoxBorder},
-                {"MaterialDesignDivider", theme => theme.Divider},
-                {"MaterialDesignSelection", theme => theme.Selection},
-                {"MaterialDesignToolForeground", theme => theme.ToolForeground},
-                {"MaterialDesignToolBackground", theme => theme.ToolBackground},
-                {"MaterialDesignFlatButtonClick", theme => theme.FlatButtonClick},
-                {"MaterialDesignFlatButtonRipple", theme => theme.FlatButtonRipple},
-                {"MaterialDesignToolTipBackground", theme => theme.ToolTipBackground},
-                {"MaterialDesignChipBackground", theme => theme.ChipBackground},
-                {"MaterialDesignSnackbarBackground", theme => theme.SnackbarBackground},
-                {"MaterialDesignSnackbarMouseOver", theme => theme.SnackbarMouseOver},
-                {"MaterialDesignSnackbarRipple", theme => theme.SnackbarRipple},
-                {"MaterialDesignTextFieldBoxBackground", theme => theme.TextFieldBoxBackground},
-                {"MaterialDesignTextFieldBoxHoverBackground", theme => theme.TextFieldBoxHoverBackground},
-                {"MaterialDesignTextFieldBoxDisabledBackground", theme => theme.TextFieldBoxDisabledBackground},
-                {"MaterialDesignTextAreaBorder", theme => theme.TextAreaBorder},
-                {"MaterialDesignTextAreaInactiveBorder", theme => theme.TextAreaInactiveBorder},
-                {"MaterialDesignDataGridRowHoverBackground", theme => theme.DataGridRowHoverBackground},
+                { "SecondaryHueLightBrush", theme => theme.SecondaryLight.Color },
+                { "SecondaryHueMidBrush", theme => theme.SecondaryMid.Color },
+                { "SecondaryHueDarkBrush", theme => theme.SecondaryDark.Color },
+                { "ValidationErrorBrush", theme => theme.ValidationError },
+                { "MaterialDesignBackground", theme => theme.Background },
+                { "MaterialDesignPaper", theme => theme.Paper },
+                { "MaterialDesignCardBackground", theme => theme.CardBackground },
+                { "MaterialDesignToolBarBackground", theme => theme.ToolBarBackground },
+                { "MaterialDesignBody", theme => theme.Body },
+                { "MaterialDesignBodyLight", theme => theme.BodyLight },
+                { "MaterialDesignColumnHeader", theme => theme.ColumnHeader },
+                { "MaterialDesignCheckBoxOff", theme => theme.CheckBoxOff },
+                { "MaterialDesignCheckBoxDisabled", theme => theme.CheckBoxDisabled },
+                { "MaterialDesignTextBoxBorder", theme => theme.TextBoxBorder },
+                { "MaterialDesignDivider", theme => theme.Divider },
+                { "MaterialDesignSelection", theme => theme.Selection },
+                { "MaterialDesignToolForeground", theme => theme.ToolForeground },
+                { "MaterialDesignToolBackground", theme => theme.ToolBackground },
+                { "MaterialDesignFlatButtonClick", theme => theme.FlatButtonClick },
+                { "MaterialDesignFlatButtonRipple", theme => theme.FlatButtonRipple },
+                { "MaterialDesignToolTipBackground", theme => theme.ToolTipBackground },
+                { "MaterialDesignChipBackground", theme => theme.ChipBackground },
+                { "MaterialDesignSnackbarBackground", theme => theme.SnackbarBackground },
+                { "MaterialDesignSnackbarMouseOver", theme => theme.SnackbarMouseOver },
+                { "MaterialDesignSnackbarRipple", theme => theme.SnackbarRipple },
+                { "MaterialDesignTextFieldBoxBackground", theme => theme.TextFieldBoxBackground },
+                { "MaterialDesignTextFieldBoxHoverBackground", theme => theme.TextFieldBoxHoverBackground },
+                { "MaterialDesignTextFieldBoxDisabledBackground", theme => theme.TextFieldBoxDisabledBackground },
+                { "MaterialDesignTextAreaBorder", theme => theme.TextAreaBorder },
+                { "MaterialDesignTextAreaInactiveBorder", theme => theme.TextAreaInactiveBorder },
+                { "MaterialDesignDataGridRowHoverBackground", theme => theme.DataGridRowHoverBackground },
             };
 
         private static Task UpdateSolidColorBrush(ITheme? oldTheme, ITheme newTheme, IResourceDictionary resourceDictionary,
@@ -255,7 +249,7 @@ namespace Material.Styles.Themes
 
             Task UpdateColorAsync(KeyValuePair<string, Func<ITheme, Color>> pair)
             {
-                var oldColor = oldTheme != null ? pair.Value(oldTheme) : (Color?) null;
+                var oldColor = oldTheme != null ? pair.Value(oldTheme) : (Color?)null;
                 var newColor = pair.Value(newTheme);
 
                 if (oldColor == newColor) return Task.CompletedTask;
@@ -275,7 +269,9 @@ namespace Material.Styles.Themes
                             {
                                 new ColorTransition
                                 {
-                                    Duration = TimeSpan.FromSeconds(0.35), Easing = new SineEaseOut(), Property = SolidColorBrush.ColorProperty
+                                    Duration = TimeSpan.FromSeconds(0.35),
+                                    Easing = new SineEaseOut(),
+                                    Property = SolidColorBrush.ColorProperty
                                 }
                             }
                         };

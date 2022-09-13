@@ -19,7 +19,7 @@ namespace Material.Styles
 
         private readonly ObservableCollection<SnackbarModel> _snackbars;
         public ObservableCollection<SnackbarModel> SnackbarModels => _snackbars;
-        
+
         /// <summary>
         /// Get the name of host. The name of host can be set only one time.
         /// </summary>
@@ -81,7 +81,7 @@ namespace Material.Styles
             //_snackbarHosts = new HashSet<SnackbarHost>();
             SnackbarHostDictionary = new Dictionary<string, SnackbarHost>();
         }
-        
+
         public SnackbarHost()
         {
             // Initialize model collection
@@ -138,9 +138,9 @@ namespace Material.Styles
             {
                 void OnExpired(object sender, ElapsedEventArgs args)
                 {
-                    if (sender is not Timer timer) 
+                    if (sender is not Timer timer)
                         return;
-                    
+
                     // Remove timer.
                     timer.Stop();
                     timer.Elapsed -= OnExpired;
@@ -167,7 +167,7 @@ namespace Material.Styles
         {
             if (string.IsNullOrEmpty(targetHost))
                 targetHost = GetFirstHostName();
-            
+
             var host = GetHost(targetHost);
 
             if (host is null)
@@ -190,14 +190,14 @@ namespace Material.Styles
         protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
         {
             SnackbarHostDictionary.Add(HostName, this);
-            
+
             base.OnAttachedToVisualTree(e);
         }
 
         protected override void OnDetachedFromLogicalTree(LogicalTreeAttachmentEventArgs e)
         {
             SnackbarHostDictionary.Remove(HostName);
-            
+
             base.OnDetachedFromLogicalTree(e);
         }
 
@@ -207,7 +207,7 @@ namespace Material.Styles
             if (HostName is null)
                 throw new ArgumentNullException(nameof(HostName),
                     "The name of SnackbarHost is null. Please define it.");
-            
+
             base.OnApplyTemplate(e);
         }
     }

@@ -15,19 +15,19 @@
         x:DataType="viewModels:TimePickerDialogViewModel">
     <Window.Resources>
         <ResourceDictionary>
-            <converters:PadNumbersConverter x:Key="PadNumbersConverter"/>
-            <converters:StringToTransformConverter x:Key="StringToTransformConverter"/>
-            <converters:HourStringConverter x:Key="HourString"/>
+            <converters:PadNumbersConverter x:Key="PadNumbersConverter" />
+            <converters:StringToTransformConverter x:Key="StringToTransformConverter" />
+            <converters:HourStringConverter x:Key="HourString" />
         </ResourceDictionary>
     </Window.Resources>
-    
+
     <Window.Styles>
-        <StyleInclude Source="avares://Material.Dialog/Icons/DialogIconStyle.axaml"/>
+        <StyleInclude Source="avares://Material.Dialog/Icons/DialogIconStyle.axaml" />
         <Style Selector="Window[SystemDecorations=None]">
-            <Setter Property="Padding" Value="32"/>
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="TransparencyLevelHint" Value="Transparent"/>
+            <Setter Property="Padding" Value="32" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="TransparencyLevelHint" Value="Transparent" />
         </Style>
     </Window.Styles>
-    
+
 </Window>

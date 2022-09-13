@@ -11,10 +11,10 @@
         </Setter>
         <Setter Property="Template">
             <ControlTemplate>
-                <Border 
+                <Border
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}"
-                    Background="{TemplateBinding Background}"/>
+                    Background="{TemplateBinding Background}" />
             </ControlTemplate>
         </Setter>
     </Style>

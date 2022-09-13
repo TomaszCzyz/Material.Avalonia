@@ -2,26 +2,26 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="Material.Styles.MaterialToolKit">
     <Styles.Resources>
-        <SolidColorBrush x:Key="MaterialDesignLightBackground" Color="#FFFAFAFA"/>
-        <SolidColorBrush x:Key="MaterialDesignLightForeground" Color="#DD000000"/>
-        <SolidColorBrush x:Key="MaterialDesignDarkBackground" Color="#FF303030"/>
-        <SolidColorBrush x:Key="MaterialDesignDarkForeground" Color="#FFFAFAFA"/>
+        <SolidColorBrush x:Key="MaterialDesignLightBackground" Color="#FFFAFAFA" />
+        <SolidColorBrush x:Key="MaterialDesignLightForeground" Color="#DD000000" />
+        <SolidColorBrush x:Key="MaterialDesignDarkBackground" Color="#FF303030" />
+        <SolidColorBrush x:Key="MaterialDesignDarkForeground" Color="#FFFAFAFA" />
         <SolidColorBrush x:Key="MaterialDesignDarkSeparatorBackground" Color="#1F000000" />
         <SolidColorBrush x:Key="MaterialDesignLightSeparatorBackground" Color="#1FFFFFFF" />
     </Styles.Resources>
-    
+
     <!--custom controls-->
-    
+
     <StyleInclude Source="avares://Material.Styles/FloatingButton.xaml" />
-    <StyleInclude Source="avares://Material.Styles/Card.xaml"/>
-    <StyleInclude Source="avares://Material.Styles/ColorZone.xaml"/>
-    <StyleInclude Source="avares://Material.Styles/NavigationDrawer.xaml"/>
-    <StyleInclude Source="avares://Material.Styles/MaterialUnderline.xaml"/>
-    <StyleInclude Source="avares://Material.Styles/SnackbarHost.xaml"/>
-    <StyleInclude Source="avares://Material.Styles/MaterialInternalIcon.axaml"/>
-    
+    <StyleInclude Source="avares://Material.Styles/Card.xaml" />
+    <StyleInclude Source="avares://Material.Styles/ColorZone.xaml" />
+    <StyleInclude Source="avares://Material.Styles/NavigationDrawer.xaml" />
+    <StyleInclude Source="avares://Material.Styles/MaterialUnderline.xaml" />
+    <StyleInclude Source="avares://Material.Styles/SnackbarHost.xaml" />
+    <StyleInclude Source="avares://Material.Styles/MaterialInternalIcon.axaml" />
+
     <!-- Basic controls -->
-    
+
     <StyleInclude Source="avares://Material.Styles/AutoCompleteBox.xaml" />
     <StyleInclude Source="avares://Material.Styles/Button.xaml" />
     <StyleInclude Source="avares://Material.Styles/ButtonSpinner.xaml" />
@@ -34,14 +34,14 @@
     <StyleInclude Source="avares://Material.Styles/ComboBox.xaml" />
     <StyleInclude Source="avares://Material.Styles/ComboBoxItem.xaml" />
     <StyleInclude Source="avares://Material.Styles/ContentControl.xaml" />
-    
+
     <StyleInclude Source="avares://Material.Styles/ContentExpandControl.axaml" />
-    
+
     <StyleInclude Source="avares://Material.Styles/ContextMenu.xaml" />
     <StyleInclude Source="avares://Material.Styles/DataValidationErrors.xaml" />
     <StyleInclude Source="avares://Material.Styles/DatePicker.xaml" />
     <StyleInclude Source="avares://Material.Styles/EmbeddableControlRoot.xaml" />
- 
+
     <StyleInclude Source="avares://Material.Styles/FlyoutPresenter.axaml" />
     <StyleInclude Source="avares://Material.Styles/FocusAdorner.xaml" />
     <StyleInclude Source="avares://Material.Styles/GridSplitter.xaml" />
@@ -70,7 +70,7 @@
     <StyleInclude Source="avares://Material.Styles/TabStripItem.xaml" />
     <StyleInclude Source="avares://Material.Styles/TextBox.xaml" />
     <StyleInclude Source="avares://Material.Styles/TextBlock.xaml" />
-    <StyleInclude Source="avares://Material.Styles/ToggleButton.xaml" /> 
+    <StyleInclude Source="avares://Material.Styles/ToggleButton.xaml" />
     <StyleInclude Source="avares://Material.Styles/ToggleSwitch.xaml" />
     <StyleInclude Source="avares://Material.Styles/ToolTip.xaml" />
     <StyleInclude Source="avares://Material.Styles/TreeView.xaml" />
@@ -78,15 +78,15 @@
     <StyleInclude Source="avares://Material.Styles/Window.xaml" />
     <StyleInclude Source="avares://Material.Styles/WindowNotificationManager.xaml" />
     <StyleInclude Source="avares://Material.Ripple/RippleEffect.xaml" />
-    
+
     <!-- Controls (High-priority) -->
     <StyleInclude Source="avares://Material.Styles/Expander.xaml" />
 
     <!-- Custom controls (High-priority) -->
-    <StyleInclude Source="avares://Material.Styles/SideSheet.xaml"/>
-    
-    <StyleInclude Source="avares://Material.Styles/TransitioningContentControl.axaml"/>
-    
+    <StyleInclude Source="avares://Material.Styles/SideSheet.xaml" />
+
+    <StyleInclude Source="avares://Material.Styles/TransitioningContentControl.axaml" />
+
     <!-- DialogHost.Avalonia -->
     <!-- dialog host style have been removed for avoid unnecessary package linking -->
     <!-- you can still add it manually https://github.com/AvaloniaUtils/DialogHost.Avalonia -->

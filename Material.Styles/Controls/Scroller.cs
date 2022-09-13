@@ -188,7 +188,7 @@ namespace Material.Styles.Controls
             RoutedEvent.Register<Scroller, ScrollChangedEventArgs>(
                 nameof(ScrollChanged),
                 RoutingStrategies.Bubble);
-        
+
         /// <summary>
         /// Defines the <see cref="CanScrollLeft"/> property.
         /// </summary>
@@ -196,7 +196,7 @@ namespace Material.Styles.Controls
             AvaloniaProperty.RegisterDirect<Scroller, bool>(
                 nameof(CanScrollLeft),
                 o => o.CanScrollLeft);
-        
+
         /// <summary>
         /// Defines the <see cref="CanScrollLeft"/> property.
         /// </summary>
@@ -435,8 +435,8 @@ namespace Material.Styles.Controls
             get => GetValue(AllowAutoHideProperty);
             set => SetValue(AllowAutoHideProperty, value);
         }
-        
-        
+
+
         /// <summary>
         ///
         /// </summary>
@@ -445,7 +445,7 @@ namespace Material.Styles.Controls
             get => _canScrollLeft;
             private set => _canScrollLeft = value;
         }
-        
+
         /// <summary>
         ///
         /// </summary>
@@ -454,7 +454,7 @@ namespace Material.Styles.Controls
             get => _canScrollRight;
             private set => _canScrollRight = value;
         }
-        
+
 
         /// <summary>
         /// Scrolls the content up one line.
@@ -487,7 +487,7 @@ namespace Material.Styles.Controls
         {
             Offset += new Vector(_smallChange.Width, 0);
         }
-        
+
         /// <summary>
         /// Scrolls the content upward by half page.
         /// </summary>
@@ -519,7 +519,7 @@ namespace Material.Styles.Controls
         {
             HorizontalScrollBarValue = Math.Min(_offset.X + _viewport.Width / 3.0, HorizontalScrollBarMaximum);
         }
-        
+
         /// <summary>
         /// Scrolls the content upward by half page.
         /// </summary>

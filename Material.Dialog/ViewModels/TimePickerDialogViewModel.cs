@@ -14,6 +14,7 @@ namespace Material.Dialog.ViewModels
         public DialogButton NegativeButton { get; internal set; }
 
         private ushort _firstField;
+
         public ushort FirstField
         {
             get => _firstField;
@@ -36,6 +37,7 @@ namespace Material.Dialog.ViewModels
         }
 
         private ushort _secondField;
+
         public ushort SecondField
         {
             get => _secondField;
@@ -53,6 +55,7 @@ namespace Material.Dialog.ViewModels
         }
 
         private string _firstPanelPointerTransform;
+
         public string FirstPanelPointerTransform
         {
             get => _firstPanelPointerTransform;
@@ -64,6 +67,7 @@ namespace Material.Dialog.ViewModels
         }
 
         private string _secondPanelPointerTransform;
+
         public string SecondPanelPointerTransform
         {
             get => _secondPanelPointerTransform;
@@ -75,6 +79,7 @@ namespace Material.Dialog.ViewModels
         }
 
         private bool _isAm = true;
+
         public bool IsAm
         {
             get => _isAm;
@@ -86,6 +91,7 @@ namespace Material.Dialog.ViewModels
         }
 
         private bool _isPm;
+
         public bool IsPm
         {
             get => _isPm;
@@ -97,6 +103,7 @@ namespace Material.Dialog.ViewModels
         }
 
         private int _carouselIndex;
+
         public int CarouselIndex
         {
             get => _carouselIndex;
@@ -140,6 +147,7 @@ namespace Material.Dialog.ViewModels
         {
             return true;
         }
+
         public async void OnPressButton(object args)
         {
             var button = args as DialogButton;

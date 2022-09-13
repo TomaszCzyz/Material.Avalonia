@@ -15,7 +15,10 @@ namespace Material.Styles.Converters
                 MarginMultiplyParameter p => p,
                 double m => new MarginMultiplyParameter
                 {
-                    BottomMultiplier = m, LeftMultiplier = m, RightMultiplier = m, TopMultiplier = m
+                    BottomMultiplier = m,
+                    LeftMultiplier = m,
+                    RightMultiplier = m,
+                    TopMultiplier = m
                 },
                 _ => MarginMultiplyParameter.Default
             };

@@ -23,9 +23,9 @@
         <Setter Property="Template">
             <ControlTemplate>
                 <Panel>
-                    <Border Name="PART_InnerBorder" CornerRadius="2" 
-                            Background="{TemplateBinding BorderBrush}"/>
-                    
+                    <Border Name="PART_InnerBorder" CornerRadius="2"
+                            Background="{TemplateBinding BorderBrush}" />
+
                     <Border Name="Root" Background="{TemplateBinding Background}"
                             BorderThickness="0" ClipToBounds="True">
                         <ContentControl Name="Content"
@@ -37,29 +37,29 @@
                                         Margin="{TemplateBinding Padding}" />
                     </Border>
 
-                    <Border Name="PART_Border" CornerRadius="2" 
+                    <Border Name="PART_Border" CornerRadius="2"
                             BorderBrush="{TemplateBinding BorderBrush}" />
                 </Panel>
             </ControlTemplate>
         </Setter>
     </Style>
-    
-    
+
+
     <Style Selector="CalendarButton TextBlock">
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="HorizontalAlignment" Value="Center"/>
-        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="TextAlignment" Value="Center" />
     </Style>
 
     <Style Selector="CalendarButton /template/ Border#PART_Border">
         <Setter Property="Opacity" Value="0" />
         <Setter Property="BorderThickness" Value="0" />
     </Style>
-    
+
     <Style Selector="CalendarButton /template/ Border#PART_InnerBorder">
         <Setter Property="Opacity" Value="0" />
     </Style>
-    
+
     <Style Selector="CalendarButton:pointerover /template/ Border#PART_InnerBorder">
         <Setter Property="Opacity" Value="0.32" />
     </Style>
@@ -73,7 +73,7 @@
     <Style Selector="CalendarButton:inactive /template/ Border#Root">
         <Setter Property="Opacity" Value="0.32" />
     </Style>
-    
+
     <Style Selector="CalendarButton:disabled /template/ ContentControl#Content">
         <Setter Property="Opacity" Value="0.32" />
     </Style>

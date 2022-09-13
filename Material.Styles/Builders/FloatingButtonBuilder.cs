@@ -38,12 +38,12 @@ namespace Material.Styles.Builders
                 Text = text
             });
         }
-        
+
         public FloatingButtonBuilder SetText(TextBlock textBlock)
         {
             return SetText(view: textBlock);
         }
-        
+
         public FloatingButtonBuilder SetText(Control view)
         {
             text = view;
@@ -57,14 +57,11 @@ namespace Material.Styles.Builders
         public FloatingButton Build()
         {
             Panel panel;
-            
+
             if (icon != null)
             {
-                panel = new StackPanel
-                {
-                    Orientation = Orientation.Horizontal
-                };
-                
+                panel = new StackPanel { Orientation = Orientation.Horizontal };
+
                 panel.Children.Add(icon);
 
                 var separator = new Separator
@@ -74,21 +71,18 @@ namespace Material.Styles.Builders
                     Background = Brushes.Transparent,
                     Foreground = Brushes.Transparent
                 };
-                
+
                 panel.Children.Add(separator);
             }
             else
             {
                 panel = new Panel();
             }
-            
-            if(text != null)
+
+            if (text != null)
                 panel.Children.Add(text);
-            
-            var button = new FloatingButton
-            {
-                Content = panel
-            };
+
+            var button = new FloatingButton { Content = panel };
 
             return button;
         }

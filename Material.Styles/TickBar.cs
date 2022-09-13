@@ -11,7 +11,6 @@ using Material.Styles.Assists;
 
 namespace Material.Styles
 {
-
     /// <summary>
     /// An element that is used for drawing <see cref="Slider"/>'s Ticks.
     /// <br/>
@@ -22,12 +21,12 @@ namespace Material.Styles
         static TickBar()
         {
             AffectsRender<TickBar>(FillProperty,
-                                   ReservedSpaceProperty,
-                                   MaximumProperty,
-                                   MinimumProperty,
-                                   OrientationProperty, 
-                                   TickFrequencyProperty,
-                                   TicksProperty);
+                ReservedSpaceProperty,
+                MaximumProperty,
+                MinimumProperty,
+                OrientationProperty,
+                TickFrequencyProperty,
+                TicksProperty);
         }
 
         public TickBar() : base()
@@ -161,34 +160,34 @@ namespace Material.Styles
         public override void Render(DrawingContext dc)
         {
             var size = new Size(Bounds.Width, Bounds.Height);
-            var range = Maximum - Minimum; 
+            var range = Maximum - Minimum;
             var logicalToPhysical = 1.0;
             var startPoint = new Point();
             var endPoint = new Point();
             var rSpace = Orientation == Orientation.Horizontal ? ReservedSpace.Width : ReservedSpace.Height;
             var s = (double)GetValue(SliderAssist.SizeTickProperty);
-            
+
             // Take Thumb size in to account
             double halfReservedSpace = rSpace * 0.5;
 
             var pen = new Pen(Fill, (double)GetValue(SliderAssist.ThicknessTickProperty));
 
-            void DrawTick(double x, double y, Pen pen, double size,double scaleX = 0.5,double scaleY = 0.5)
+            void DrawTick(double x, double y, Pen pen, double size, double scaleX = 0.5, double scaleY = 0.5)
             {
-                double halfS = pen.Thickness * size * 0.5; 
-                double dx = x * scaleX - halfS; 
-                double dy = y * scaleY - halfS; 
+                double halfS = pen.Thickness * size * 0.5;
+                double dx = x * scaleX - halfS;
+                double dy = y * scaleY - halfS;
                 dc.DrawGeometry(pen.Brush, pen, new EllipseGeometry(
                     new Rect(dx, dy, size, size)));
             }
-            
+
             // Reduce tick interval if it is more than would be visible on the screen
             double interval = TickFrequency;
-            
+
             // This property is rarely set so let's try to avoid the GetValue
             // caching of the mutable default value
             var ticks = Ticks ?? null;
-            
+
             switch (Orientation)
             {
                 case Orientation.Horizontal:
@@ -196,11 +195,12 @@ namespace Material.Styles
                     {
                         return;
                     }
+
                     size = new Size(size.Width - rSpace, size.Height);
                     startPoint = new Point(halfReservedSpace, size.Height);
                     endPoint = new Point(halfReservedSpace + size.Width, size.Height);
                     logicalToPhysical = size.Width / range;
-                    
+
                     if (interval > 0.0)
                     {
                         double minInterval = (Maximum - Minimum) / size.Width;
@@ -218,7 +218,7 @@ namespace Material.Styles
                     if (ticks?.Count > 0)
                     {
                         for (int i = 0; i < ticks.Count; i++)
-                        { 
+                        {
                             double x = logicalToPhysical + startPoint.X;
                             DrawTick(x, startPoint.Y, pen, s, scaleX: 1);
                         }
@@ -232,18 +232,20 @@ namespace Material.Styles
                             DrawTick(x, startPoint.Y, pen, s, scaleX: 1);
                         }
                     }
+
                     break;
-                     
+
                 case Orientation.Vertical:
                     if (MathUtilities.GreaterThanOrClose(rSpace, size.Height))
                     {
                         return;
                     }
+
                     size = new Size(size.Width, size.Height - rSpace);
                     startPoint = new Point(size.Width, size.Height + halfReservedSpace);
                     endPoint = new Point(size.Width, halfReservedSpace);
                     logicalToPhysical = size.Height / range * -1;
-                    
+
                     if (interval > 0.0)
                     {
                         double minInterval = (Maximum - Minimum) / size.Height;
@@ -261,7 +263,7 @@ namespace Material.Styles
                     if (ticks?.Count > 0)
                     {
                         for (int i = 0; i < ticks.Count; i++)
-                        { 
+                        {
                             double y = logicalToPhysical + startPoint.Y;
                             DrawTick(startPoint.X, y, pen, s, scaleY: 1);
                         }
@@ -275,7 +277,8 @@ namespace Material.Styles
                             DrawTick(startPoint.X, y, pen, s, scaleY: 1);
                         }
                     }
-                    break; 
+
+                    break;
             }
         }
     }

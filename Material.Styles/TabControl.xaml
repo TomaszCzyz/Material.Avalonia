@@ -45,7 +45,7 @@
                             <Border Name="PART_SelectedContentHostBorder">
                                 <ContentPresenter Name="PART_SelectedContentHost"
                                                   Content="{TemplateBinding SelectedContent}"
-                                                  ContentTemplate="{TemplateBinding ContentTemplate}"/>
+                                                  ContentTemplate="{TemplateBinding ContentTemplate}" />
                             </Border>
                         </DockPanel>
                     </Panel>
@@ -53,7 +53,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <Style Selector="TabControl.Scrollable">
         <Setter Property="Template">
             <ControlTemplate>
@@ -62,15 +62,15 @@
                             VerticalAlignment="Stretch" />
                     <DockPanel>
                         <Grid Name="HeaderGrid" ColumnDefinitions="32,*,32">
-                            <Border Grid.ColumnSpan="3" 
-                                    Name="HeaderSeparatorBorder" 
+                            <Border Grid.ColumnSpan="3"
+                                    Name="HeaderSeparatorBorder"
                                     Background="Transparent"
                                     HorizontalAlignment="Stretch"
                                     VerticalAlignment="Stretch"
                                     BorderBrush="{Binding Path=(assists:TabControlAssist.TabHeaderInactiveBrush), RelativeSource={RelativeSource AncestorType=TabControl}}"
                                     Opacity="0.12" />
 
-                            <controls:Scroller Name="PART_ScrollerRoot" Grid.ColumnSpan="3" >
+                            <controls:Scroller Name="PART_ScrollerRoot" Grid.ColumnSpan="3">
                                 <Border Name="HeaderPanelBorder" Background="Transparent" HorizontalAlignment="Stretch">
                                     <ItemsPresenter
                                         Name="PART_ItemsPresenter"
@@ -87,31 +87,31 @@
                                     </ItemsPresenter>
                                 </Border>
                             </controls:Scroller>
-                            <Button Name="PART_ScrollLeftButton" 
+                            <Button Name="PART_ScrollLeftButton"
                                     Classes="Flat" IsVisible="{Binding ElementName=PART_ScrollerRoot, Path=CanScrollLeft}"
                                     Command="{Binding ElementName=PART_ScrollerRoot, Path=OneByThirdPageLeft}">
-                                <controls:MaterialInternalIcon Kind="ChevronLeft"/>
+                                <controls:MaterialInternalIcon Kind="ChevronLeft" />
                             </Button>
-                            <Button Name="PART_ScrollRightButton" Grid.Column="2" 
+                            <Button Name="PART_ScrollRightButton" Grid.Column="2"
                                     Classes="Flat" IsVisible="{Binding ElementName=PART_ScrollerRoot, Path=CanScrollRight}"
                                     Command="{Binding ElementName=PART_ScrollerRoot, Path=OneByThirdPageRight}">
-                                <controls:MaterialInternalIcon Kind="ChevronRight"/>
+                                <controls:MaterialInternalIcon Kind="ChevronRight" />
                             </Button>
                         </Grid>
 
                         <Border Name="PART_SelectedContentHostBorder">
                             <ContentPresenter Name="PART_SelectedContentHost"
                                               Content="{TemplateBinding SelectedContent}"
-                                              ContentTemplate="{TemplateBinding ContentTemplate}"/>
+                                              ContentTemplate="{TemplateBinding ContentTemplate}" />
                         </Border>
                     </DockPanel>
                 </Panel>
             </ControlTemplate>
         </Setter>
     </Style>
-    
+
     <!-- For Horizontal TabControl -->
-    
+
     <!-- For TabStripPlacement=Top -->
     <Style Selector="TabControl /template/ Grid#HeaderGrid">
         <Setter Property="DockPanel.Dock" Value="Top" />
@@ -126,7 +126,7 @@
         <Setter Property="Columns" Value="0" />
         <Setter Property="Rows" Value="1" />
     </Style>
-    
+
     <!-- For TabStripPlacement=Bottom -->
     <Style Selector="TabControl[TabStripPlacement=Bottom] /template/ Grid#HeaderGrid">
         <Setter Property="DockPanel.Dock" Value="Bottom" />
@@ -173,8 +173,8 @@
     </Style>
 
     <Style Selector="TabControl > TabItem">
-        <Setter Property="MinWidth" Value="90"/>
-        <Setter Property="MaxWidth" Value="360"/>
+        <Setter Property="MinWidth" Value="90" />
+        <Setter Property="MaxWidth" Value="360" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="assists:TabControlAssist.TabHeaderForeground"
                 Value="{Binding Path=(assists:TabControlAssist.TabHeaderInactiveBrush), RelativeSource={RelativeSource AncestorType=TabControl}}" />
@@ -185,7 +185,8 @@
                         <Grid Name="ItemContent" Background="{TemplateBinding Background}"
                               HorizontalAlignment="Stretch"
                               VerticalAlignment="Stretch" MinHeight="48" MinWidth="90">
-                            <ripple:RippleEffect RippleFill="{Binding Path=(assists:TabControlAssist.TabHeaderHighlightBrush), RelativeSource={RelativeSource AncestorType=TabControl}}">
+                            <ripple:RippleEffect
+                                RippleFill="{Binding Path=(assists:TabControlAssist.TabHeaderHighlightBrush), RelativeSource={RelativeSource AncestorType=TabControl}}">
                                 <ContentPresenter Name="headerContent"
                                                   Margin="24,12,24,12" HorizontalAlignment="Center"
                                                   VerticalAlignment="Center"

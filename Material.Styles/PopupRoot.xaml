@@ -6,13 +6,13 @@
         <Setter Property="TransparencyLevelHint" Value="Transparent" />
         <Setter Property="Template">
             <ControlTemplate>
-                <VisualLayerManager Name="VisualLayer" IsPopup="True" >
+                <VisualLayerManager Name="VisualLayer" IsPopup="True">
                     <Grid Name="PopupRootGrid">
                         <ContentPresenter Name="PART_ContentPresenter"
                                           Background="{TemplateBinding Background}"
                                           ContentTemplate="{TemplateBinding ContentTemplate}"
                                           Content="{TemplateBinding Content}"
-                                          Padding="{TemplateBinding Padding}"/>
+                                          Padding="{TemplateBinding Padding}" />
                     </Grid>
                 </VisualLayerManager>
             </ControlTemplate>

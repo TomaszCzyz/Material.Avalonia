@@ -1,8 +1,10 @@
 ﻿using Avalonia.Media;
 using Material.Colors.ColorManipulation;
 
-namespace Material.Colors {
-    public struct ColorPair {
+namespace Material.Colors
+{
+    public struct ColorPair
+    {
         public Color Color { get; set; }
 
         /// <summary>
@@ -11,21 +13,25 @@ namespace Material.Colors {
         /// </summary>
         public Color? ForegroundColor { get; set; }
 
-        public static implicit operator ColorPair(Color color) {
+        public static implicit operator ColorPair(Color color)
+        {
             return new ColorPair(color);
         }
 
-        public ColorPair(Color color) {
+        public ColorPair(Color color)
+        {
             Color = color;
             ForegroundColor = null;
         }
 
-        public ColorPair(Color color, Color? foreground) {
+        public ColorPair(Color color, Color? foreground)
+        {
             Color = color;
             ForegroundColor = foreground;
         }
 
-        public Color GetForegroundColor() {
+        public Color GetForegroundColor()
+        {
             return ForegroundColor ?? Color.ContrastingForegroundColor();
         }
     }

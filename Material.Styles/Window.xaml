@@ -20,7 +20,7 @@
                                       Content="{TemplateBinding Content}"
                                       Margin="{TemplateBinding Padding}"
                                       HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
                 </VisualLayerManager>
             </Panel>
         </ControlTemplate>

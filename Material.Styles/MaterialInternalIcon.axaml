@@ -7,12 +7,12 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <Border Background="{TemplateBinding Background}" 
+                    <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}">
                         <Viewbox>
                             <Canvas Width="24" Height="24">
-                                <Path Data="{Binding Data, RelativeSource={RelativeSource TemplatedParent}}"                                   
+                                <Path Data="{Binding Data, RelativeSource={RelativeSource TemplatedParent}}"
                                       Fill="{TemplateBinding Foreground}" />
                             </Canvas>
                         </Viewbox>

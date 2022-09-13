@@ -2,11 +2,11 @@
         xmlns:styles="clr-namespace:Material.Styles"
         xmlns:assists="clr-namespace:Material.Styles.Assists">
     <Style Selector="NumericUpDown">
-        <Setter Property="BorderBrush" Value="Transparent"/>
-        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Background" Value="{DynamicResource MaterialDesignTextFieldBoxBackground}" />
-        <Setter Property="VerticalAlignment" Value="Bottom"/>
-        <Setter Property="MinHeight" Value="48"/>
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="MinHeight" Value="48" />
         <Setter Property="Template">
             <ControlTemplate>
                 <Border Name="PART_RootBorder"
@@ -40,27 +40,27 @@
                                      Text="{TemplateBinding Text}"
                                      AcceptsReturn="False" TextWrapping="NoWrap" />
                         </ButtonSpinner>
-                        <styles:MaterialUnderline Classes="MirrorY" 
-                                                  VerticalAlignment="Bottom"   
-                                                  Name="Underline"/>
+                        <styles:MaterialUnderline Classes="MirrorY"
+                                                  VerticalAlignment="Bottom"
+                                                  Name="Underline" />
                     </Grid>
                 </Border>
             </ControlTemplate>
         </Setter>
     </Style>
-    
+
     <Style Selector="NumericUpDown /template/ TextBox#PART_TextBox /template/ styles|MaterialUnderline#Underline">
-        <Setter Property="Opacity" Value="0"/>
+        <Setter Property="Opacity" Value="0" />
     </Style>
-    
+
     <Style Selector="NumericUpDown:focus-within /template/ styles|MaterialUnderline#Underline">
-        <Setter Property="IsExpanded" Value="True"/>
+        <Setter Property="IsExpanded" Value="True" />
     </Style>
-    
+
     <Style Selector="NumericUpDown:pointerover /template/ styles|MaterialUnderline#Underline">
-        <Setter Property="IsActive" Value="True"/>
-    </Style> 
-    
+        <Setter Property="IsActive" Value="True" />
+    </Style>
+
     <Style Selector="TextBox /template/ Border#PART_RootBorder">
         <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignTextBoxBorder}" />
     </Style>

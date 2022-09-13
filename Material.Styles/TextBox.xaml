@@ -22,23 +22,23 @@
                       IsEnabled="{Binding $parent[TextBox].CanCut}"
                       InputGesture="{Binding Converter={StaticResource GetPlatformHotkeyConfig}, ConverterParameter=cut}"
                       Icon="{extensions:MaterialInternalIcon Kind=MaterialContentCut}" />
-            
+
             <MenuItem Name="TextBoxContextMenuCopyItem"
                       Header="Copy"
                       Command="{Binding $parent[TextBox].Copy}"
                       IsEnabled="{Binding $parent[TextBox].CanCopy}"
                       InputGesture="{Binding Converter={StaticResource GetPlatformHotkeyConfig}, ConverterParameter=copy}"
                       Icon="{extensions:MaterialInternalIcon Kind=MaterialContentCopy}" />
-            
+
             <MenuItem Name="TextBoxContextMenuPasteItem"
                       Header="Paste"
                       Command="{Binding $parent[TextBox].Paste}"
                       IsEnabled="{Binding $parent[TextBox].CanPaste}"
                       InputGesture="{Binding Converter={StaticResource GetPlatformHotkeyConfig}, ConverterParameter=paste}"
                       Icon="{extensions:MaterialInternalIcon Kind=MaterialContentPaste}" />
-            
+
             <Separator />
-            
+
             <MenuItem Name="TextBoxContextMenuSelectAllItem"
                       Header="Select All"
                       Command="{Binding $parent[TextBox].SelectAll}"
@@ -48,7 +48,7 @@
 
         <converters:RectangleHollowGeometryConverter x:Key="RectangleHollowGeometry" />
     </Styles.Resources>
-    
+
     <Style Selector="ContextMenu#TextBoxContextMenu controls|MaterialInternalIcon">
         <Setter Property="Width" Value="24" />
         <Setter Property="Height" Value="24" />
@@ -66,8 +66,8 @@
         <Setter Property="FontFamily"
                 Value="avares://Material.Styles/Fonts/Roboto#Roboto,
             Noto Sans TC, Noto Sans SC, Noto Sans JP, Noto Sans KR, Noto Sans, Arial" />
-        <Setter Property="FontSize" Value="16.0"/>
-        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="FontSize" Value="16.0" />
+        <Setter Property="FontWeight" Value="Normal" />
         <Setter Property="Template">
             <ControlTemplate>
                 <Grid RowDefinitions="*, Auto">
@@ -133,7 +133,7 @@
                                                                SelectionBrush="{TemplateBinding SelectionBrush}"
                                                                SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
                                                                CaretBrush="{TemplateBinding CaretBrush}"
-                                                               CaretIndex="{TemplateBinding CaretIndex}"/>
+                                                               CaretIndex="{TemplateBinding CaretIndex}" />
                                             </Panel>
                                         </ScrollViewer>
                                     </Panel>
@@ -293,7 +293,7 @@
                                                                SelectionBrush="{TemplateBinding SelectionBrush}"
                                                                SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
                                                                CaretBrush="{TemplateBinding CaretBrush}"
-                                                               CaretIndex="{TemplateBinding CaretIndex}"/>
+                                                               CaretIndex="{TemplateBinding CaretIndex}" />
                                             </Panel>
                                         </ScrollViewer>
                                     </Panel>
@@ -452,7 +452,7 @@
                                                            SelectionBrush="{TemplateBinding SelectionBrush}"
                                                            SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
                                                            CaretBrush="{TemplateBinding CaretBrush}"
-                                                           CaretIndex="{TemplateBinding CaretIndex}"/>
+                                                           CaretIndex="{TemplateBinding CaretIndex}" />
                                         </Panel>
                                     </ScrollViewer>
                                 </Panel>
@@ -667,7 +667,7 @@
                                                            SelectionBrush="{TemplateBinding SelectionBrush}"
                                                            SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
                                                            CaretBrush="{TemplateBinding CaretBrush}"
-                                                           CaretIndex="{TemplateBinding CaretIndex}"/>
+                                                           CaretIndex="{TemplateBinding CaretIndex}" />
                                         </Panel>
                                     </ScrollViewer>
                                 </Grid>

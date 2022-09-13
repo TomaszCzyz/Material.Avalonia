@@ -276,9 +276,9 @@
 
                             <controls:Rotator Name="PART_Rotator">
                                 <controls:Arc Name="PART_Animation"
-                                              ArcBrush="{TemplateBinding Foreground}"/>
+                                              ArcBrush="{TemplateBinding Foreground}" />
                             </controls:Rotator>
-                            
+
                             <controls:Arc Name="PART_Arc"
                                           ArcBrush="{TemplateBinding Foreground}"
                                           StartAngle="0">
@@ -299,11 +299,11 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <Style Selector="ProgressBar.Circle /template/ controls|Arc#PART_Animation">
         <Setter Property="Stroke" Value="4" />
     </Style>
-    
+
     <Style Selector="ProgressBar.Circle /template/ controls|Arc#PART_Arc">
         <Setter Property="Stroke" Value="4" />
     </Style>
@@ -324,7 +324,8 @@
         </Setter>
     </Style>
 
-    <Style Selector="ProgressBar.Circle:not(:indeterminate) /template/ controls|Rotator#PART_Rotator,
+    <Style
+        Selector="ProgressBar.Circle:not(:indeterminate) /template/ controls|Rotator#PART_Rotator,
                      ProgressBar.Circle[IsVisible=false] /template/ controls|Rotator#PART_Rotator">
         <Style.Animations>
             <Animation Duration="0:0:0.1" IterationCount="INFINITE">
@@ -332,8 +333,8 @@
                     <Setter Property="Speed" Value="0" />
                 </KeyFrame>
                 <KeyFrame Cue="100%">
-	                <Setter Property="Speed" Value="0" />
-		        </KeyFrame>
+                    <Setter Property="Speed" Value="0" />
+                </KeyFrame>
             </Animation>
         </Style.Animations>
     </Style>

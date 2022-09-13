@@ -11,9 +11,9 @@ using System.Text;
 namespace Material.Dialog.Icons
 {
     public class DialogIcon : TemplatedControl
-    {  
+    {
         static DialogIcon()
-        { 
+        {
         }
 
         public static readonly StyledProperty<DialogIconKind> KindProperty
@@ -47,13 +47,14 @@ namespace Material.Dialog.Icons
         }
 
         public static readonly StyledProperty<bool> UseRecommendColorProperty
-    = AvaloniaProperty.Register<DialogIcon, bool>(nameof(UseRecommendColor), true, notifying: UseRecommendColorPropertyChangedCallback);
-         
+            = AvaloniaProperty.Register<DialogIcon, bool>(nameof(UseRecommendColor), true, notifying: UseRecommendColorPropertyChangedCallback);
+
         public bool UseRecommendColor
         {
             get => GetValue(UseRecommendColorProperty);
             set => SetValue(UseRecommendColorProperty, value);
         }
+
         private static void UseRecommendColorPropertyChangedCallback(IAvaloniaObject sender, bool before)
         {
             ((DialogIcon)sender).UpdateColor();
@@ -63,11 +64,11 @@ namespace Material.Dialog.Icons
         {
             base.OnApplyTemplate(e);
             UpdateData();
-        } 
+        }
 
         private void UpdateData()
         {
-            string data = null; 
+            string data = null;
             DialogIconsDataFactory.DataIndex.Value?.TryGetValue(Kind, out data);
             var g = StreamGeometry.Parse(data);
             Data = g;
