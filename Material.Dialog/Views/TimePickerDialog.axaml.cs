@@ -98,7 +98,7 @@ namespace Material.Dialog.Views
 
         public void AttachViewModel(TimePickerDialogViewModel vm)
         {
-            this.DataContext = vm;
+            DataContext = vm;
             viewModel = vm;
         }
 

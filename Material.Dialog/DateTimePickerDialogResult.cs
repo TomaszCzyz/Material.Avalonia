@@ -12,14 +12,14 @@ namespace Material.Dialog
 
         public DateTimePickerDialogResult(string result, TimeSpan time)
         {
-            this.Result = result;
-            this._timeSpan = time;
+            Result = result;
+            _timeSpan = time;
         }
         
         public DateTimePickerDialogResult(string result, DateTime date)
         {
-            this.Result = result;
-            this._dateTime = date;
+            Result = result;
+            _dateTime = date;
         }
         
         internal string Result;

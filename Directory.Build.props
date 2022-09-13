@@ -1,5 +1,7 @@
 <Project>
   <PropertyGroup>
+    <LangVersion>10</LangVersion>
+    <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <VersionPrefix>3.0.1-alpha1</VersionPrefix>
   </PropertyGroup>

@@ -117,8 +117,8 @@
 
           <Rectangle Name="BackgroundRectangle" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
 
-          <DataGridRowHeader Grid.RowSpan="3" Name="PART_RowHeader" DataGridFrozenGrid.IsFrozen="True" />
-          <DataGridCellsPresenter Grid.Column="1" Name="PART_CellsPresenter" DataGridFrozenGrid.IsFrozen="True" />
+          <DataGridRowHeader Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Name="PART_RowHeader" DataGridFrozenGrid.IsFrozen="True" />
+          <DataGridCellsPresenter Grid.Row="0" Grid.Column="1" Name="PART_CellsPresenter" DataGridFrozenGrid.IsFrozen="True" />
           <DataGridDetailsPresenter Grid.Row="1" Grid.Column="1" Name="PART_DetailsPresenter"/>
           <Rectangle Grid.Row="2" Grid.Column="1" Margin="0"
                      VerticalAlignment="Bottom" Height="1" Name="PART_BottomGridLine"
@@ -178,7 +178,8 @@
             <TextBlock Name="ItemCountElement" Margin="4,0,0,0" IsVisible="{TemplateBinding IsItemCountVisible}"/>
           </StackPanel>
 
-          <DataGridRowHeader Name="RowHeader" Grid.RowSpan="3" DataGridFrozenGrid.IsFrozen="True"/>
+          <DataGridRowHeader Name="RowHeader" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0"
+                             DataGridFrozenGrid.IsFrozen="True"/>
 
         </DataGridFrozenGrid>
       </ControlTemplate>
@@ -188,7 +189,7 @@
   <Style Selector="DataGridRowGroupHeader /template/ ToggleButton#ExpanderButton">
     <Setter Property="Template">
       <ControlTemplate>
-        <Border Grid.Column="0" Width="20" Height="20" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Border Width="20" Height="20" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center">
           <Path Fill="{TemplateBinding Foreground}"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
@@ -231,15 +232,16 @@
           <Grid RowDefinitions="Auto,*,Auto,Auto" ColumnDefinitions="Auto,*,Auto">
 
             <DataGridColumnHeader Name="PART_TopLeftCornerHeader" Width="22" />
-            <DataGridColumnHeadersPresenter Name="PART_ColumnHeadersPresenter" Grid.Column="1"/>
+            <DataGridColumnHeadersPresenter Name="PART_ColumnHeadersPresenter" Grid.Row="0" Grid.Column="1"/>
             
-            <Separator Grid.ColumnSpan="3" Margin="0"
+            <Separator Grid.Row="0" Grid.ColumnSpan="3" Grid.Column="0" Margin="0"
                        VerticalAlignment="Bottom" Height="1"
                        Background="{TemplateBinding BorderBrush}"/> 
 
-            <DataGridRowsPresenter Name="PART_RowsPresenter" Grid.ColumnSpan="2" Grid.Row="1" />
+            <DataGridRowsPresenter Name="PART_RowsPresenter" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1" />
             <Rectangle Name="PART_BottomRightCorner" Fill="{DynamicResource ThemeControlMidHighBrush}" Grid.Column="2" Grid.Row="2" />
-            <Rectangle Name="BottomLeftCorner" Fill="{DynamicResource ThemeControlMidHighBrush}" Grid.Row="2" Grid.ColumnSpan="2" />
+            <Rectangle Name="BottomLeftCorner" Fill="{DynamicResource ThemeControlMidHighBrush}" Grid.Row="2" Grid.ColumnSpan="2"
+                       Grid.Column="0" />
             <ScrollBar Name="PART_VerticalScrollbar" Classes="Modern"
                        Orientation="Vertical" Grid.Column="2" Grid.Row="1" />
 
@@ -266,15 +268,16 @@
           <Grid RowDefinitions="Auto,*,Auto,Auto" ColumnDefinitions="Auto,*,Auto">
 
             <DataGridColumnHeader Name="PART_TopLeftCornerHeader" Width="22" />
-            <DataGridColumnHeadersPresenter Name="PART_ColumnHeadersPresenter" Grid.Column="1"/>
+            <DataGridColumnHeadersPresenter Name="PART_ColumnHeadersPresenter" Grid.Row="0" Grid.Column="1"/>
             
-            <Separator Grid.ColumnSpan="3" Margin="0"
+            <Separator Grid.Row="0" Grid.ColumnSpan="3" Grid.Column="0" Margin="0"
                        VerticalAlignment="Bottom" Height="1"
                        Background="{TemplateBinding BorderBrush}"/> 
 
-            <DataGridRowsPresenter Name="PART_RowsPresenter" Grid.ColumnSpan="2" Grid.Row="1" />
+            <DataGridRowsPresenter Name="PART_RowsPresenter" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1" />
             <Rectangle Name="PART_BottomRightCorner" Fill="{DynamicResource ThemeControlMidHighBrush}" Grid.Column="2" Grid.Row="2" />
-            <Rectangle Name="BottomLeftCorner" Fill="{DynamicResource ThemeControlMidHighBrush}" Grid.Row="2" Grid.ColumnSpan="2" />
+            <Rectangle Name="BottomLeftCorner" Fill="{DynamicResource ThemeControlMidHighBrush}" Grid.Row="2" Grid.ColumnSpan="2"
+                       Grid.Column="0" />
             <ScrollBar Name="PART_VerticalScrollbar" Grid.Column="2" Grid.Row="1" />
 
             <Grid Grid.Column="1" Grid.Row="2"
@@ -300,15 +303,16 @@
           <Grid RowDefinitions="Auto,*,Auto,Auto" ColumnDefinitions="Auto,*,Auto">
 
             <DataGridColumnHeader Name="PART_TopLeftCornerHeader" Width="22" />
-            <DataGridColumnHeadersPresenter Name="PART_ColumnHeadersPresenter" Grid.Column="1"/>
+            <DataGridColumnHeadersPresenter Name="PART_ColumnHeadersPresenter" Grid.Row="0" Grid.Column="1"/>
             
-            <Separator Grid.ColumnSpan="3" Margin="0"
+            <Separator Grid.Row="0" Grid.ColumnSpan="3" Grid.Column="0" Margin="0"
                        VerticalAlignment="Bottom" Height="1"
                        Background="{TemplateBinding BorderBrush}"/> 
 
-            <DataGridRowsPresenter Name="PART_RowsPresenter" Grid.ColumnSpan="2" Grid.Row="1" />
+            <DataGridRowsPresenter Name="PART_RowsPresenter" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1" />
             <Rectangle Name="PART_BottomRightCorner" Fill="{DynamicResource ThemeControlMidHighBrush}" Grid.Column="2" Grid.Row="2" />
-            <Rectangle Name="BottomLeftCorner" Fill="{DynamicResource ThemeControlMidHighBrush}" Grid.Row="2" Grid.ColumnSpan="2" />
+            <Rectangle Name="BottomLeftCorner" Fill="{DynamicResource ThemeControlMidHighBrush}" Grid.Row="2" Grid.ColumnSpan="2"
+                       Grid.Column="0" />
             <ScrollBar Name="PART_VerticalScrollbar" Classes="Mini"
                        Grid.Column="2" Grid.Row="1"/>
 

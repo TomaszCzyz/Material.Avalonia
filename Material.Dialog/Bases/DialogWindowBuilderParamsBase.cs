@@ -9,8 +9,8 @@ namespace Material.Dialog.Bases
         public string WindowTitle = "Warning";
         public double? MaxWidth = null;
         public double? Width = null;
-        public string ContentHeader = null;
-        public string SupportingText = null;
+        public string? ContentHeader = null;
+        public string? SupportingText = null;
         public bool Borderless = false;
         public WindowStartupLocation StartupLocation = WindowStartupLocation.CenterScreen;
         
@@ -24,7 +24,7 @@ namespace Material.Dialog.Bases
         /// <summary>
         /// Specify <see cref="Avalonia.Media.Imaging.Bitmap"/>, <see cref="Avalonia.Controls.Control"/> or <see cref="DialogIconKind"/> for dialog header icon.
         /// </summary>
-        public object DialogIcon = null;
+        public object? DialogIcon = null;
         
         /// <summary>
         /// Build dialog buttons stack (left side). 
