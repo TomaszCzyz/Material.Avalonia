@@ -13,16 +13,15 @@ namespace Material.Dialog.Views
 {
     public class TimePickerDialog : Window, IDialogWindowResult<DateTimePickerDialogResult>, IHasNegativeResult
     {
-        //private bool PointerHoldingCell;
-        private TimePickerDialogViewModel viewModel;
+        private TimePickerDialogViewModel _viewModel;
         private Carousel PART_PagesRoot;
-        private Grid CallerPanel1;
-        private Grid CallerPanel2;
-        private Stack<IPointer> Pointers;
-        private bool HoldingPointer => Pointers.Count >= 1;
+        private Grid _callerPanel1;
+        private Grid _callerPanel2;
+        private readonly Stack<IPointer> _pointers;
+        private bool HoldingPointer => _pointers.Count >= 1;
 
-        private void CreateCallerCells1() => CreateCallerCellsToPanel(CallerPanel1, 12, firstText: 12, decreaseShows: false);
-        private void CreateCallerCells2() => CreateCallerCellsToPanel(CallerPanel2, 60, padNumbers: true);
+        private void CreateCallerCells1() => CreateCallerCellsToPanel(_callerPanel1, 12, firstText: 12, decreaseShows: false);
+        private void CreateCallerCells2() => CreateCallerCellsToPanel(_callerPanel2, 60, padNumbers: true);
 
         private void CreateCallerCellsToPanel(Grid panel, int counts, float radius = 109, int firstText = 0, bool padNumbers = false,
             bool decreaseShows = true)
@@ -42,7 +41,7 @@ namespace Material.Dialog.Views
                         continue;
                 }
 
-                var r = (float)i / (float)counts * (Math.PI * 2) - offset;
+                var r = i / (float)counts * (Math.PI * 2) - offset;
                 var x = radius * Math.Cos(r);
                 var y = radius * Math.Sin(r);
 
@@ -70,25 +69,23 @@ namespace Material.Dialog.Views
         public TimePickerDialog()
         {
             Result = new DateTimePickerDialogResult();
-            Pointers = new Stack<IPointer>();
+            _pointers = new Stack<IPointer>();
 
             InitializeComponent();
 
 #if DEBUG
-
             this.AttachDevTools();
-
 #endif
 
             // Create decorations
-            CallerPanel1 = this.Get<Grid>(nameof(CallerPanel1));
-            CallerPanel2 = this.Get<Grid>(nameof(CallerPanel2));
+            _callerPanel1 = this.Get<Grid>(nameof(_callerPanel1));
+            _callerPanel2 = this.Get<Grid>(nameof(_callerPanel2));
         }
 
         public void AttachViewModel(TimePickerDialogViewModel vm)
         {
             DataContext = vm;
-            viewModel = vm;
+            _viewModel = vm;
         }
 
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
@@ -109,7 +106,7 @@ namespace Material.Dialog.Views
 
         private void CallerPanel_OnPointerPressed(object sender, PointerPressedEventArgs e)
         {
-            Pointers.Push(e.Pointer);
+            _pointers.Push(e.Pointer);
             var panel = sender as Control;
             var pointer = e.GetPosition(panel);
             CallerPanel_OnPointerPressOrMove(panel, pointer);
@@ -144,14 +141,14 @@ namespace Material.Dialog.Views
                 v = 0;
 
             if (PART_PagesRoot.SelectedIndex == 1)
-                viewModel.SecondField = (ushort)v;
+                _viewModel.SecondField = (ushort)v;
             else
-                viewModel.FirstField = (ushort)v;
+                _viewModel.FirstField = (ushort)v;
         }
 
         private void CallerPanel_OnPointerReleased(object sender, PointerReleasedEventArgs e)
         {
-            Pointers.Pop();
+            _pointers.Pop();
 
             if (!HoldingPointer)
                 PART_PagesRoot.Next();

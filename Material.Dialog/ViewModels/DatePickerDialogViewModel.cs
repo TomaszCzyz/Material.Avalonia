@@ -7,7 +7,7 @@ namespace Material.Dialog.ViewModels
 {
     public class DatePickerDialogViewModel : DialogWindowViewModel
     {
-        private readonly DatePickerDialog _window;
+        private new readonly DatePickerDialog _window;
 
         public DialogButton PositiveButton { get; internal set; }
 

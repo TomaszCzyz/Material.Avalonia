@@ -1,6 +1,4 @@
-<Styles xmlns="https://github.com/avaloniaui"
-        xmlns:style="clr-namespace:Material.Styles"
-        xmlns:assists="clr-namespace:Material.Styles.Assists">
+<Styles xmlns="https://github.com/avaloniaui">
     <Style Selector="PopupRoot">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="TransparencyLevelHint" Value="Transparent" />

@@ -1,21 +1,19 @@
 using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Controls.Primitives;
 
-namespace Material.Styles
+namespace Material.Styles;
+
+public class Card : ContentControl
 {
-    public class Card : ContentControl
-    {
-        public static readonly StyledProperty<bool> InsideClippingProperty =
-            AvaloniaProperty.Register<Card, bool>(nameof(InsideClipping), true);
+    public static readonly StyledProperty<bool> InsideClippingProperty =
+        AvaloniaProperty.Register<Card, bool>(nameof(InsideClipping), true);
 
-        /// <summary>
-        /// Get or set the inside border clipping.
-        /// </summary>
-        public bool InsideClipping
-        {
-            get => GetValue(InsideClippingProperty);
-            set => SetValue(InsideClippingProperty, value);
-        }
+    /// <summary>
+    /// Get or set the inside border clipping.
+    /// </summary>
+    public bool InsideClipping
+    {
+        get => GetValue(InsideClippingProperty);
+        set => SetValue(InsideClippingProperty, value);
     }
 }

@@ -49,7 +49,7 @@ namespace Material.Dialog.Views
                 if (fields is null)
                     return;
 
-                int index = 0;
+                var index = 0;
                 foreach (var item in fields.ItemContainerGenerator.Containers)
                 {
                     var fieldViewModel = vm.TextFields[index];
@@ -90,7 +90,7 @@ namespace Material.Dialog.Views
             };
         }
 
-        public void SetNegativeResult(DialogResult result) => Result.result = result.GetResult;
+        public void SetNegativeResult(DialogResult result) => Result.Result = result.GetResult;
 
         private void InitializeComponent() => AvaloniaXamlLoader.Load(this);
     }

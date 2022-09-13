@@ -5,10 +5,8 @@ using Material.Dialog.ViewModels.Elements.Header.Icons;
 
 namespace Material.Dialog.Resources
 {
-    // ReSharper disable once UnusedType.Global
     public class TemplateResources : ResourceDictionary
     {
-        // ReSharper disable UnusedMember.Local
         private void DialogButtonTemplate_OnSelectTemplateKey(object sender, SelectTemplateEventArgs e)
         {
             e.TemplateKey = e.DataContext switch
@@ -28,7 +26,5 @@ namespace Material.Dialog.Resources
                 _ => throw new ArgumentOutOfRangeException()
             };
         }
-
-        // ReSharper restore UnusedMember.Local
     }
 }

@@ -6,8 +6,8 @@
     <Style Selector="ToggleButton.ComboBoxToggleButton">
         <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidForegroundBrush}" />
         <Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}" />
-        <Setter Property="assists:ToggleButtonAssist.UncheckedBackground" Value="{DynamicResource MaterialDesignPaper}"></Setter>
-        <Setter Property="assists:ToggleButtonAssist.UncheckedForeground" Value="{DynamicResource MaterialDesignBody}"></Setter>
+        <Setter Property="assists:ToggleButtonAssist.UncheckedBackground" Value="{DynamicResource MaterialDesignPaper}" />
+        <Setter Property="assists:ToggleButtonAssist.UncheckedForeground" Value="{DynamicResource MaterialDesignBody}" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Padding" Value="16 4 16 4" />
@@ -44,10 +44,10 @@
                                                   Name="Underline">
                             <styles:MaterialUnderline.Styles>
                                 <Style Selector="ToggleButton.ComboBoxToggleButton:checked /template/ styles|MaterialUnderline#Underline">
-                                    <Setter Property="IsExpanded" Value="True"></Setter>
+                                    <Setter Property="IsExpanded" Value="True" />
                                 </Style>
                                 <Style Selector="ToggleButton.ComboBoxToggleButton:pointerover /template/ styles|MaterialUnderline#Underline">
-                                    <Setter Property="IsActive" Value="True"></Setter>
+                                    <Setter Property="IsActive" Value="True" />
                                 </Style>
                             </styles:MaterialUnderline.Styles>
                         </styles:MaterialUnderline>
@@ -80,7 +80,7 @@
                                       BorderBrush="{DynamicResource MaterialDesignTextBoxBorder}"
                                       IsChecked="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
                                       Grid.ColumnSpan="2" />
-                        <Grid HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        <Grid Grid.Column="0" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                               Margin="{TemplateBinding Padding}"
                               UseLayoutRounding="{TemplateBinding UseLayoutRounding}">
@@ -101,7 +101,7 @@
                             </Grid>
                         </Grid>
 
-                        <Popup Name="PART_Popup"
+                        <Popup Grid.Column="0" Name="PART_Popup"
                                IsOpen="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
                                MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"
                                VerticalOffset="0"
@@ -215,10 +215,10 @@
                                                           Name="Underline">
                                     <styles:MaterialUnderline.Styles>
                                         <Style Selector="ComboBox.Filled[IsDropDownOpen=true] /template/ styles|MaterialUnderline#Underline">
-                                            <Setter Property="IsExpanded" Value="True"></Setter>
+                                            <Setter Property="IsExpanded" Value="True" />
                                         </Style>
                                         <Style Selector="ComboBox.Filled:pointerover /template/ styles|MaterialUnderline#Underline">
-                                            <Setter Property="IsActive" Value="True"></Setter>
+                                            <Setter Property="IsActive" Value="True" />
                                         </Style>
                                     </styles:MaterialUnderline.Styles>
                                 </styles:MaterialUnderline>

@@ -8,14 +8,14 @@
 
         public TextFieldDialogResult(string result, TextFieldResult[] fieldsResult)
         {
-            this.result = result;
-            this.fieldsResult = fieldsResult;
+            Result = result;
+            FieldsResult = fieldsResult;
         }
 
-        internal string result;
-        public string GetResult => result;
+        internal string Result = string.Empty;
+        public override string GetResult => Result;
 
-        internal TextFieldResult[] fieldsResult;
-        public TextFieldResult[] GetFieldsResult() => fieldsResult;
+        internal TextFieldResult[] FieldsResult;
+        public TextFieldResult[] GetFieldsResult() => FieldsResult;
     }
 }

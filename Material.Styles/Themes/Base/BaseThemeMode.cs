@@ -1,9 +1,8 @@
-﻿namespace Material.Styles.Themes.Base
+﻿namespace Material.Styles.Themes.Base;
+
+public enum BaseThemeMode
 {
-    public enum BaseThemeMode
-    {
-        Inherit,
-        Light,
-        Dark
-    }
+    Inherit,
+    Light,
+    Dark
 }

@@ -15,8 +15,7 @@
                     <Border Name="PART_BackgroundBorder"
                             Background="{TemplateBinding Background}"
                             CornerRadius="{TemplateBinding CornerRadius}"
-                            assists:ShadowAssist.ShadowDepth="{TemplateBinding assists:ShadowAssist.ShadowDepth}">
-                    </Border>
+                            assists:ShadowAssist.ShadowDepth="{TemplateBinding assists:ShadowAssist.ShadowDepth}" />
                     <Border Name="PART_ContentBorder"
                             CornerRadius="{TemplateBinding CornerRadius}"
                             ClipToBounds="{TemplateBinding InsideClipping}"

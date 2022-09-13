@@ -3,70 +3,69 @@ using Avalonia.Controls;
 using Material.Colors;
 using Material.Styles.Themes.Base;
 
-namespace Material.Styles.Themes
+namespace Material.Styles.Themes;
+
+[Obsolete(
+    $"Obsolete styling system. Use {nameof(MaterialTheme)}. Details in our wiki: https://github.com/AvaloniaCommunity/Material.Avalonia/wiki/Advanced-Theming")]
+public class BundledTheme : ResourceDictionary
 {
-    [Obsolete(
-        $"Obsolete styling system. Use {nameof(MaterialTheme)}. Details in our wiki: https://github.com/AvaloniaCommunity/Material.Avalonia/wiki/Advanced-Theming")]
-    public class BundledTheme : ResourceDictionary
+    private BaseThemeMode? _baseTheme;
+
+    private PrimaryColor? _primaryColor;
+
+    private SecondaryColor? _secondaryColor;
+
+    public BaseThemeMode? BaseTheme
     {
-        private BaseThemeMode? _baseTheme;
-
-        private PrimaryColor? _primaryColor;
-
-        private SecondaryColor? _secondaryColor;
-
-        public BaseThemeMode? BaseTheme
+        get => _baseTheme;
+        set
         {
-            get => _baseTheme;
-            set
+            if (_baseTheme != value)
             {
-                if (_baseTheme != value)
-                {
-                    _baseTheme = value;
-                    SetTheme();
-                }
+                _baseTheme = value;
+                SetTheme();
             }
         }
+    }
 
-        public PrimaryColor? PrimaryColor
+    public PrimaryColor? PrimaryColor
+    {
+        get => _primaryColor;
+        set
         {
-            get => _primaryColor;
-            set
+            if (_primaryColor != value)
             {
-                if (_primaryColor != value)
-                {
-                    _primaryColor = value;
-                    SetTheme();
-                }
+                _primaryColor = value;
+                SetTheme();
             }
         }
+    }
 
-        public SecondaryColor? SecondaryColor
+    public SecondaryColor? SecondaryColor
+    {
+        get => _secondaryColor;
+        set
         {
-            get => _secondaryColor;
-            set
+            if (_secondaryColor != value)
             {
-                if (_secondaryColor != value)
-                {
-                    _secondaryColor = value;
-                    SetTheme();
-                }
+                _secondaryColor = value;
+                SetTheme();
             }
         }
+    }
 
-        private void SetTheme()
-        {
-            if (!(BaseTheme is { } baseTheme) || !(PrimaryColor is { } primaryColor) || !(SecondaryColor is { } secondaryColor)) return;
-            var theme = Theme.Create(baseTheme.GetBaseTheme(),
-                SwatchHelper.Lookup[(MaterialColor)primaryColor],
-                SwatchHelper.Lookup[(MaterialColor)secondaryColor]);
+    private void SetTheme()
+    {
+        if (!(BaseTheme is { } baseTheme) || !(PrimaryColor is { } primaryColor) || !(SecondaryColor is { } secondaryColor)) return;
+        var theme = Theme.Create(baseTheme.GetBaseTheme(),
+            SwatchHelper.Lookup[(MaterialColor)primaryColor],
+            SwatchHelper.Lookup[(MaterialColor)secondaryColor]);
 
-            ApplyTheme(theme);
-        }
+        ApplyTheme(theme);
+    }
 
-        protected virtual void ApplyTheme(ITheme theme)
-        {
-            this.SetTheme(theme);
-        }
+    protected virtual void ApplyTheme(ITheme theme)
+    {
+        this.SetTheme(theme);
     }
 }

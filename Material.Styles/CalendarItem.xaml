@@ -63,22 +63,19 @@
                         <Grid ColumnDefinitions="Auto,*,Auto" Margin="12">
                             <Button Name="PreviousButton" Grid.Column="0"
                                     Classes="CalendarHeader CalendarNavigation Flat"
-                                    Foreground="{TemplateBinding Foreground}" Content="&lt;">
-                            </Button>
+                                    Foreground="{TemplateBinding Foreground}" Content="&lt;" />
 
                             <Button Name="HeaderButton" Grid.Column="1" IsEnabled="False"
                                     Classes="CalendarHeader CalendarHeaderTitle Flat" />
 
                             <Button Name="NextButton" Grid.Column="2"
                                     Classes="CalendarHeader CalendarNavigation Flat"
-                                    Foreground="{TemplateBinding Foreground}" Content="&gt;">
-                            </Button>
+                                    Foreground="{TemplateBinding Foreground}" Content="&gt;" />
                         </Grid>
 
                         <Grid Name="MonthView" Grid.Row="1" IsVisible="False" MinHeight="290" Margin="12"
                               VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
-                              RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,*,*,*,*,*,*">
-                        </Grid>
+                              RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,*,*,*,*,*,*" />
                         <Grid Name="YearView" MinHeight="290"
                               Grid.Row="1" IsVisible="False">
                             <Grid.RowDefinitions>

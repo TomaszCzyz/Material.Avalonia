@@ -2,89 +2,88 @@
 using Avalonia.Layout;
 using Avalonia.Media;
 
-namespace Material.Styles.Builders
+namespace Material.Styles.Builders;
+
+public class FloatingButtonBuilder
 {
-    public class FloatingButtonBuilder
+    private double _spacing = 12.0;
+    private Control? _icon;
+    private Control? _text;
+
+    /// <summary>
+    /// Set spacing between icon and text views.
+    /// </summary>
+    public FloatingButtonBuilder SetSpacing(double spacing = 12.0)
     {
-        private double spacing = 12.0;
-        private Control? icon;
-        private Control? text;
+        _spacing = spacing;
+        return this;
+    }
 
-        /// <summary>
-        /// Set spacing between icon and text views.
-        /// </summary>
-        public FloatingButtonBuilder SetSpacing(double spacing = 12.0)
-        {
-            this.spacing = spacing;
-            return this;
-        }
+    public FloatingButtonBuilder SetIcon(Control view)
+    {
+        _icon = view;
+        return this;
+    }
 
-        public FloatingButtonBuilder SetIcon(Control view)
+    /// <summary>
+    /// Create text view and attach to floating action button later.
+    /// </summary>
+    public FloatingButtonBuilder SetText(string text)
+    {
+        return SetText(new TextBlock
         {
-            icon = view;
-            return this;
-        }
+            Name = "PART_AdditionalText",
+            Classes = Classes.Parse("Button"),
+            VerticalAlignment = VerticalAlignment.Center,
+            Text = text
+        });
+    }
 
-        /// <summary>
-        /// Create text view and attach to floating action button later.
-        /// </summary>
-        public FloatingButtonBuilder SetText(string text)
+    public FloatingButtonBuilder SetText(TextBlock textBlock)
+    {
+        return SetText(view: textBlock);
+    }
+
+    public FloatingButtonBuilder SetText(Control view)
+    {
+        _text = view;
+        return this;
+    }
+
+    /// <summary>
+    /// Build and return instance floating action button.
+    /// </summary>
+    /// <returns>New instance FloatingButton.</returns>
+    public FloatingButton Build()
+    {
+        Panel panel;
+
+        if (_icon != null)
         {
-            return SetText(new TextBlock
+            panel = new StackPanel { Orientation = Orientation.Horizontal };
+
+            panel.Children.Add(_icon);
+
+            var separator = new Separator
             {
-                Name = "PART_AdditionalText",
-                Classes = Classes.Parse("Button"),
-                VerticalAlignment = VerticalAlignment.Center,
-                Text = text
-            });
-        }
+                Name = "PART_Spacing",
+                Width = _spacing,
+                Background = Brushes.Transparent,
+                Foreground = Brushes.Transparent
+            };
 
-        public FloatingButtonBuilder SetText(TextBlock textBlock)
+            panel.Children.Add(separator);
+        }
+        else
         {
-            return SetText(view: textBlock);
+            panel = new Panel();
         }
 
-        public FloatingButtonBuilder SetText(Control view)
-        {
-            text = view;
-            return this;
-        }
+        if (_text != null)
+            panel.Children.Add(_text);
 
-        /// <summary>
-        /// Build and return instance floating action button.
-        /// </summary>
-        /// <returns>New instance FloatingButton.</returns>
-        public FloatingButton Build()
-        {
-            Panel panel;
+        var button = new FloatingButton { Content = panel };
 
-            if (icon != null)
-            {
-                panel = new StackPanel { Orientation = Orientation.Horizontal };
-
-                panel.Children.Add(icon);
-
-                var separator = new Separator
-                {
-                    Name = "PART_Spacing",
-                    Width = spacing,
-                    Background = Brushes.Transparent,
-                    Foreground = Brushes.Transparent
-                };
-
-                panel.Children.Add(separator);
-            }
-            else
-            {
-                panel = new Panel();
-            }
-
-            if (text != null)
-                panel.Children.Add(text);
-
-            var button = new FloatingButton { Content = panel };
-
-            return button;
-        }
+        return button;
     }
 }

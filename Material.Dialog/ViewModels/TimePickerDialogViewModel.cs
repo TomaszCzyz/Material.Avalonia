@@ -48,7 +48,7 @@ namespace Material.Dialog.ViewModels
 
                 _secondField = value;
 
-                double r = Math.Round(_secondField / (double)60 * 360);
+                var r = Math.Round(_secondField / (double)60 * 360);
                 SecondPanelPointerTransform = $"rotate({r}deg)";
                 OnPropertyChanged();
             }

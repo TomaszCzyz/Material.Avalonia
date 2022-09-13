@@ -121,8 +121,7 @@
                                                       VerticalAlignment="Center"
 
                                                       IsVisible="{TemplateBinding Icon, Converter={x:Static ObjectConverters.IsNotNull}}"
-                                                      Content="{TemplateBinding Icon}">
-                                    </ContentPresenter>
+                                                      Content="{TemplateBinding Icon}" />
                                     <ContentPresenter Name="PART_HeaderPresenter"
                                                       VerticalAlignment="Center"
                                                       Content="{TemplateBinding Header}">

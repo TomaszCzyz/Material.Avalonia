@@ -124,9 +124,9 @@ namespace Material.Dialog.ViewModels
         }
 
 
-        private ObservableCollection<DialogButtonViewModel> _dialogButtons;
+        private ObservableCollection<DialogButtonViewModel>? _dialogButtons;
 
-        public ObservableCollection<DialogButtonViewModel> DialogButtons
+        public ObservableCollection<DialogButtonViewModel>? DialogButtons
         {
             get => _dialogButtons;
             internal set

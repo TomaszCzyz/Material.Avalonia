@@ -1,7 +1,6 @@
-﻿namespace Material.Styles.Enums
+﻿namespace Material.Styles.Enums;
+
+public enum HorizontalDirection
 {
-    public enum HorizontalDirection
-    {
-        Left, Right
-    }
+    Left, Right
 }

@@ -7,6 +7,7 @@ namespace Material.Dialog
     {
         public DateTimePickerDialogResult()
         {
+            Result = string.Empty;
         }
 
         public DateTimePickerDialogResult(string result, TimeSpan time)
@@ -18,7 +19,7 @@ namespace Material.Dialog
         public DateTimePickerDialogResult(string result, DateTime date)
         {
             Result = result;
-            _dateTime = date;
+            DateTime = date;
         }
 
         internal string Result;
@@ -32,11 +33,11 @@ namespace Material.Dialog
         /// </summary>
         public TimeSpan GetTimeSpan() => _timeSpan;
 
-        internal DateTime _dateTime;
+        internal DateTime DateTime;
 
         /// <summary>
         /// Get result of DatePicker.
         /// </summary>
-        public DateTime GetDate() => _dateTime;
+        public DateTime GetDate() => DateTime;
     }
 }

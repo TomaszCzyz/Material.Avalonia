@@ -70,7 +70,7 @@
                                     BorderBrush="{Binding Path=(assists:TabControlAssist.TabHeaderInactiveBrush), RelativeSource={RelativeSource AncestorType=TabControl}}"
                                     Opacity="0.12" />
 
-                            <controls:Scroller Name="PART_ScrollerRoot" Grid.ColumnSpan="3">
+                            <controls:Scroller Name="PART_ScrollerRoot" Grid.ColumnSpan="3" Grid.Column="0">
                                 <Border Name="HeaderPanelBorder" Background="Transparent" HorizontalAlignment="Stretch">
                                     <ItemsPresenter
                                         Name="PART_ItemsPresenter"
@@ -87,7 +87,7 @@
                                     </ItemsPresenter>
                                 </Border>
                             </controls:Scroller>
-                            <Button Name="PART_ScrollLeftButton"
+                            <Button Grid.Column="0" Name="PART_ScrollLeftButton"
                                     Classes="Flat" IsVisible="{Binding ElementName=PART_ScrollerRoot, Path=CanScrollLeft}"
                                     Command="{Binding ElementName=PART_ScrollerRoot, Path=OneByThirdPageLeft}">
                                 <controls:MaterialInternalIcon Kind="ChevronLeft" />

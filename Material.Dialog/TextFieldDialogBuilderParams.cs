@@ -1,7 +1,9 @@
-﻿using Material.Dialog.Bases;
+﻿using System;
+using Material.Dialog.Bases;
 
 namespace Material.Dialog
 {
+    [Obsolete("Obsolete")]
     public class TextFieldDialogBuilderParams : TwoFeedbackDialogBuilderParamsBase
     {
         /// <summary>

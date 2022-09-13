@@ -5,25 +5,24 @@ using Avalonia.Data.Converters;
 
 // ReSharper disable HeapView.BoxingAllocation
 
-namespace Material.Styles.Converters
+namespace Material.Styles.Converters;
+
+public class RangeToSweepConverter : IMultiValueConverter
 {
-    public class RangeToSweepConverter : IMultiValueConverter
+    public object Convert(IList<object?> values, Type targetType, object? parameter, CultureInfo culture)
     {
-        public object Convert(IList<object?> values, Type targetType, object? parameter, CultureInfo culture)
-        {
-            double min = 0, max = 100, val = 0;
+        double min = 0, max = 100, val = 0;
 
-            if (values[0] is double value)
-                val = value;
+        if (values[0] is double value)
+            val = value;
 
-            if (values.Count >= 2 && values[1] is double minimum)
-                min = minimum;
+        if (values.Count >= 2 && values[1] is double minimum)
+            min = minimum;
 
-            if (values.Count >= 3 && values[2] is double maximum)
-                max = maximum;
+        if (values.Count >= 3 && values[2] is double maximum)
+            max = maximum;
 
-            var m = max - min;
-            return val / m * 360;
-        }
+        var m = max - min;
+        return val / m * 360;
     }
 }

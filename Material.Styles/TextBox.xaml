@@ -114,8 +114,7 @@
                                                            Text="{TemplateBinding Watermark}"
                                                            FontFamily="{TemplateBinding FontFamily}"
                                                            TextAlignment="{TemplateBinding TextAlignment}"
-                                                           TextWrapping="{TemplateBinding TextWrapping}">
-                                                </TextBlock>
+                                                           TextWrapping="{TemplateBinding TextWrapping}" />
                                                 <TextPresenter Name="PART_TextPresenter"
                                                                Margin="0,6,0,7"
                                                                Text="{TemplateBinding Text, Mode=TwoWay}"
@@ -141,7 +140,7 @@
                                         <ContentPresenter Content="{TemplateBinding InnerRightContent}" />
                                         <Border Name="PART_AssistButtonsContainer" />
                                     </StackPanel>
-                                    <styles:MaterialUnderline Grid.ColumnSpan="3" Classes="MirrorY"
+                                    <styles:MaterialUnderline Grid.ColumnSpan="3" Grid.Column="0" Classes="MirrorY"
                                                               VerticalAlignment="Bottom"
                                                               Name="PART_Underline" />
                                 </Grid>
@@ -275,8 +274,7 @@
                                                            Text="{TemplateBinding Watermark}"
                                                            FontFamily="{TemplateBinding FontFamily}"
                                                            TextAlignment="{TemplateBinding TextAlignment}"
-                                                           TextWrapping="{TemplateBinding TextWrapping}">
-                                                </TextBlock>
+                                                           TextWrapping="{TemplateBinding TextWrapping}" />
                                                 <TextPresenter Name="PART_TextPresenter"
                                                                Text="{TemplateBinding Text, Mode=TwoWay}"
                                                                TextBlock.FontFamily="{TemplateBinding FontFamily}"
@@ -301,7 +299,7 @@
                                         <ContentPresenter Content="{TemplateBinding InnerRightContent}" />
                                         <Border Name="PART_AssistButtonsContainer" />
                                     </StackPanel>
-                                    <styles:MaterialUnderline Grid.ColumnSpan="3" Classes="MirrorY"
+                                    <styles:MaterialUnderline Grid.ColumnSpan="3" Grid.Column="0" Classes="MirrorY"
                                                               VerticalAlignment="Bottom"
                                                               Name="PART_Underline" />
                                 </Grid>
@@ -434,8 +432,7 @@
                                                        Text="{TemplateBinding Watermark}"
                                                        FontFamily="{TemplateBinding FontFamily}"
                                                        TextAlignment="{TemplateBinding TextAlignment}"
-                                                       TextWrapping="{TemplateBinding TextWrapping}">
-                                            </TextBlock>
+                                                       TextWrapping="{TemplateBinding TextWrapping}" />
                                             <TextPresenter Name="PART_TextPresenter"
                                                            Text="{TemplateBinding Text, Mode=TwoWay}"
                                                            TextBlock.FontFamily="{TemplateBinding FontFamily}"

@@ -1,31 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Material.Dialog.Icons
 {
     public static class DialogIconsDataFactory
     {
-        public static Lazy<IDictionary<DialogIconKind, string>> DataIndex { get; }
+        public static Lazy<IDictionary<DialogIconKind, string?>> DataIndex { get; }
 
-        public static Lazy<IDictionary<DialogIconKind, string>> RecommendColorIndex { get; }
+        public static Lazy<IDictionary<DialogIconKind, string?>> RecommendColorIndex { get; }
 
         static DialogIconsDataFactory()
         {
             if (DataIndex == null)
             {
-                DataIndex = new Lazy<IDictionary<DialogIconKind, string>>(Create);
+                DataIndex = new Lazy<IDictionary<DialogIconKind, string?>>(Create);
             }
 
             if (RecommendColorIndex == null)
             {
-                RecommendColorIndex = new Lazy<IDictionary<DialogIconKind, string>>(CreateColor);
+                RecommendColorIndex = new Lazy<IDictionary<DialogIconKind, string?>>(CreateColor);
             }
         }
 
-        public static IDictionary<DialogIconKind, string> Create()
+        public static Dictionary<DialogIconKind, string> Create()
         {
-            return new Dictionary<DialogIconKind, string>()
+            return new Dictionary<DialogIconKind, string>
             {
                 {
                     DialogIconKind.Blocked,

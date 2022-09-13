@@ -1,16 +1,15 @@
-﻿namespace Material.Colors.ColorManipulation
-{
-    internal struct Hsl
-    {
-        public double H { get; }
-        public double S { get; }
-        public double L { get; }
+﻿namespace Material.Colors.ColorManipulation;
 
-        public Hsl(double h, double s, double l)
-        {
-            H = h;
-            S = s;
-            L = l;
-        }
+internal struct Hsl
+{
+    public double H { get; }
+    public double S { get; }
+    public double L { get; }
+
+    public Hsl(double h, double s, double l)
+    {
+        H = h;
+        S = s;
+        L = l;
     }
 }

@@ -13,9 +13,7 @@ namespace Material.Dialog.Views
             InitializeComponent();
 
 #if DEBUG
-
             this.AttachDevTools();
-
 #endif
         }
 

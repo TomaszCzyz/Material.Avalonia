@@ -1,6 +1,5 @@
-namespace Material.Avalonia
+namespace Material.Avalonia;
+
+public class MaterialAvaloniaTemplates : global::Avalonia.Styling.Styles
 {
-    public class MaterialAvaloniaTemplates : global::Avalonia.Styling.Styles
-    {
-    }
 }

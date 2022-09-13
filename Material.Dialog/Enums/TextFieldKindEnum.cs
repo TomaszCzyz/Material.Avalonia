@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Material.Dialog.Enums
+﻿namespace Material.Dialog.Enums
 {
     public enum TextFieldKind
     {

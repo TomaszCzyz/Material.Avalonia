@@ -7,7 +7,7 @@ namespace Material.Dialog
         /// <summary>
         /// Constant none result.
         /// </summary>
-        public static DialogResult NoResult { get; private set; } = new DialogResult { result = "none" };
+        public static DialogResult NoResult { get; private set; } = new DialogResult { _result = "none" };
 
 
         public DialogResult()
@@ -16,11 +16,12 @@ namespace Material.Dialog
 
         public DialogResult(string result)
         {
-            this.result = result;
+            _result = result;
         }
 
 
-        private string result;
-        public virtual string GetResult => result;
+        private string _result = string.Empty;
+
+        public virtual string GetResult => _result;
     }
 }

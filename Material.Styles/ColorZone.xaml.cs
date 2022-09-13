@@ -1,41 +1,40 @@
 using Avalonia;
 using Avalonia.Controls;
 
-namespace Material.Styles
+namespace Material.Styles;
+
+public enum ColorZoneMode
 {
-    public enum ColorZoneMode
+    Standard,
+    Inverted,
+    PrimaryLight,
+    PrimaryMid,
+    PrimaryDark,
+    Accent,
+    Light,
+    Dark,
+    Custom
+}
+
+public class ColorZone : ContentControl
+{
+    public static new readonly StyledProperty<CornerRadius> CornerRadiusProperty =
+        AvaloniaProperty.Register<ColorZone, CornerRadius>(nameof(CornerRadius));
+
+    /// <summary>
+    /// Gets or sets the radius of the border rounded corners.
+    /// </summary>
+    public new CornerRadius CornerRadius
     {
-        Standard,
-        Inverted,
-        PrimaryLight,
-        PrimaryMid,
-        PrimaryDark,
-        Accent,
-        Light,
-        Dark,
-        Custom
+        get => GetValue(CornerRadiusProperty);
+        set => SetValue(CornerRadiusProperty, value);
     }
 
-    public class ColorZone : ContentControl
+    public static readonly StyledProperty<ColorZoneMode> ModeProperty = AvaloniaProperty.Register<ColorZone, ColorZoneMode>(nameof(Mode));
+
+    public ColorZoneMode Mode
     {
-        public static readonly StyledProperty<CornerRadius> CornerRadiusProperty =
-            AvaloniaProperty.Register<ColorZone, CornerRadius>(nameof(CornerRadius));
-
-        /// <summary>
-        /// Gets or sets the radius of the border rounded corners.
-        /// </summary>
-        public CornerRadius CornerRadius
-        {
-            get => GetValue(CornerRadiusProperty);
-            set => SetValue(CornerRadiusProperty, value);
-        }
-
-        public static readonly StyledProperty<ColorZoneMode> ModeProperty = AvaloniaProperty.Register<ColorZone, ColorZoneMode>(nameof(Mode));
-
-        public ColorZoneMode Mode
-        {
-            get => GetValue(ModeProperty);
-            set => SetValue(ModeProperty, value);
-        }
+        get => GetValue(ModeProperty);
+        set => SetValue(ModeProperty, value);
     }
 }

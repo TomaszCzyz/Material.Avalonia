@@ -1,6 +1,5 @@
 <Styles xmlns="https://github.com/avaloniaui"
-        xmlns:cc="clr-namespace:Material.Styles"
-        xmlns:assists="clr-namespace:Material.Styles.Assists">
+        xmlns:cc="clr-namespace:Material.Styles">
     <Style Selector="ContextMenu">
         <Setter Property="WindowManagerAddShadowHint" Value="False" />
         <Setter Property="Background" Value="{DynamicResource MaterialDesignCardBackground}" />

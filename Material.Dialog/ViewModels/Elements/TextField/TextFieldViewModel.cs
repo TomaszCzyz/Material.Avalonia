@@ -25,9 +25,9 @@ namespace Material.Dialog.ViewModels.Elements.TextField
 
         public Func<string, Tuple<bool, string>> ValidateHandler;
 
-        private string _placeholderText;
+        private string? _placeholderText;
 
-        public string PlaceholderText
+        public string? PlaceholderText
         {
             get => _placeholderText;
             set
@@ -110,9 +110,9 @@ namespace Material.Dialog.ViewModels.Elements.TextField
             }
         }
 
-        private string _assistiveText;
+        private string? _assistiveText;
 
-        public string AssistiveText
+        public string? AssistiveText
         {
             get => _assistiveText;
             set

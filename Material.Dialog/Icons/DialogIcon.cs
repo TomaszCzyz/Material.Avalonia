@@ -1,12 +1,6 @@
 ﻿using Avalonia;
-using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
-using Avalonia.Controls.Templates;
 using Avalonia.Media;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
 
 namespace Material.Dialog.Icons
 {
@@ -68,7 +62,7 @@ namespace Material.Dialog.Icons
 
         private void UpdateData()
         {
-            string data = null;
+            string? data = null;
             DialogIconsDataFactory.DataIndex.Value?.TryGetValue(Kind, out data);
             var g = StreamGeometry.Parse(data);
             Data = g;
@@ -78,7 +72,7 @@ namespace Material.Dialog.Icons
         {
             if (UseRecommendColor == true)
             {
-                string color = null;
+                string? color = null;
                 DialogIconsDataFactory.RecommendColorIndex.Value?.TryGetValue(Kind, out color);
                 Foreground = SolidColorBrush.Parse(color);
             }

@@ -5,67 +5,66 @@ using Avalonia.Controls.Primitives;
 using Avalonia.Media;
 using Material.Styles.Internal;
 
-namespace Material.Styles.Controls
+namespace Material.Styles.Controls;
+
+public class MaterialInternalIcon : TemplatedControl
 {
-    public class MaterialInternalIcon : TemplatedControl
+    private static readonly Lazy<IDictionary<string, string>> _dataSetInstance = new(IconsDataSet.CreateDataSet);
+
+    static MaterialInternalIcon()
     {
-        private static readonly Lazy<IDictionary<string, string>> _dataSetInstance = new(IconsDataSet.CreateDataSet);
+        KindProperty.Changed.Subscribe(args => (args.Sender as MaterialInternalIcon)?.UpdateData());
+    }
 
-        static MaterialInternalIcon()
+    public static readonly AvaloniaProperty<string> KindProperty = AvaloniaProperty.Register<MaterialInternalIcon, string>(nameof(Kind));
+
+    /// <summary>
+    /// Gets or sets the icon to display.
+    /// </summary>
+    public string Kind
+    {
+        get => (string)GetValue(KindProperty)!;
+        set => SetValue(KindProperty, value);
+    }
+
+    public static readonly AvaloniaProperty<Geometry?> DataProperty 
+        = AvaloniaProperty.RegisterDirect<MaterialInternalIcon, Geometry?>(nameof(Data), icon => icon.Data);
+
+    private Geometry? _data;
+
+    /// <summary>
+    /// Gets the icon path data for the current <see cref="Kind"/>.
+    /// </summary>
+    public Geometry? Data
+    {
+        get
         {
-            KindProperty.Changed.Subscribe(args => (args.Sender as MaterialInternalIcon)?.UpdateData());
-        }
-
-        public static readonly AvaloniaProperty<string> KindProperty = AvaloniaProperty.Register<MaterialInternalIcon, string>(nameof(Kind));
-
-        /// <summary>
-        /// Gets or sets the icon to display.
-        /// </summary>
-        public string Kind
-        {
-            get => (string)GetValue(KindProperty);
-            set => SetValue(KindProperty, value);
-        }
-
-        private static readonly AvaloniaProperty<Geometry?>
-            DataProperty = AvaloniaProperty.RegisterDirect<MaterialInternalIcon, Geometry?>(nameof(Data), icon => icon.Data);
-
-        private Geometry? _data;
-
-        /// <summary>
-        /// Gets the icon path data for the current <see cref="Kind"/>.
-        /// </summary>
-        public Geometry? Data
-        {
-            get
+            _data = _data switch
             {
-                _data = _data switch
-                {
-                    null => Geometry.Parse(IconsDataSet.UnknownIconData),
-                    _ => _data
-                };
-                return _data;
-            }
-            private set => SetAndRaise(DataProperty, ref _data, value);
+                null => Geometry.Parse(IconsDataSet.UnknownIconData),
+                _ => _data
+            };
+            return _data;
         }
+        private set => SetAndRaise(DataProperty, ref _data, value);
+    }
 
-        protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
-        {
-            base.OnApplyTemplate(e);
-            UpdateData();
-        }
+    protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
+    {
+        base.OnApplyTemplate(e);
+        UpdateData();
+    }
 
-        private void UpdateData()
-        {
-            if (Kind is null)
-                return;
+    private void UpdateData()
+    {
+        if (Kind is null)
+            return;
 
-            string data = null;
+        string data = null;
 
-            if (_dataSetInstance.Value?.TryGetValue(Kind, out data) ?? false)
-                Data = Geometry.Parse(data);
-            else
-                Data = null;
-        }
+        if (_dataSetInstance.Value?.TryGetValue(Kind, out data) ?? false)
+            Data = Geometry.Parse(data);
+        else
+            Data = null;
     }
 }

@@ -152,9 +152,7 @@
             <ControlTemplate>
                 <Grid Name="PART_Root"
                       RowDefinitions="*,*,Auto"
-                      ColumnDefinitions="Auto,*">
-
-                </Grid>
+                      ColumnDefinitions="Auto,*" />
             </ControlTemplate>
         </Setter>
     </Style>
@@ -329,12 +327,12 @@
     </Style>
 
     <Style Selector="DataGrid.DisableHoveringScrollBar ScrollBar:horizontal">
-        <Setter Property="Margin" Value="0"></Setter>
-        <Setter Property="Height" Value="{DynamicResource ScrollBarThickness}"></Setter>
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Height" Value="{DynamicResource ScrollBarThickness}" />
     </Style>
 
     <Style Selector="DataGrid.DisableHoveringScrollBar ScrollBar:vertical">
-        <Setter Property="Margin" Value="0"></Setter>
-        <Setter Property="Width" Value="{DynamicResource ScrollBarThickness}"></Setter>
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Width" Value="{DynamicResource ScrollBarThickness}" />
     </Style>
 </Styles>

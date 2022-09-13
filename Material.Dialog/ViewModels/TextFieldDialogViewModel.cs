@@ -22,22 +22,6 @@ namespace Material.Dialog.ViewModels
             }
         }
 
-        /*private DialogResultButton _positiveButton;
-
-        public DialogResultButton PositiveButton
-        {
-            get => _positiveButton;
-            internal set => _positiveButton = value;
-        }
-
-        private DialogResultButton _negativeButton;
-
-        public DialogResultButton NegativeButton
-        {
-            get => _negativeButton;
-            internal set => _negativeButton = value;
-        }*/
-
         public TextFieldDialogViewModel(TextFieldDialog dialog)
         {
             _window = dialog;
@@ -96,14 +80,14 @@ namespace Material.Dialog.ViewModels
                 if (args is ObsoleteDialogButtonViewModel vm)
                     resultButtonId = vm.Result;
 
-                var result = new TextFieldDialogResult { result = resultButtonId };
+                var result = new TextFieldDialogResult { Result = resultButtonId };
 
                 var fields = new List<TextFieldResult>();
 
                 foreach (var item in TextFields)
                     fields.Add(new TextFieldResult { Text = item.Text });
 
-                result.fieldsResult = fields.ToArray();
+                result.FieldsResult = fields.ToArray();
                 button.Parent.DialogResult = result;
 
                 _window.Close();
